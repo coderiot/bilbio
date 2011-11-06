@@ -1,0 +1,20 @@
+# Häufigkeit der Vorkommen der Themenbereiche in den Publikationen
+stat 6948
+physics:hep-th 82857
+physics:hep-ex 19070
+physics:nucl-ex 8986
+physics:quant-ph 44553
+physics:math-ph 27190
+physics:hep-lat 14655
+q-bio 9640
+physics:gr-qc 42217
+physics:physics 48312
+physics 11
+physics:astro-ph 141148
+cs 34024
+physics:nucl-th 26489
+physics:cond-mat 141423
+nlin 18912
+q-fin 3089
+physics:hep-ph 91445
+math 149679

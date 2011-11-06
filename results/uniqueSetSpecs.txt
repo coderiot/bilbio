@@ -1,0 +1,20 @@
+# Menge der vorkommenden Themenbereiche
+stat
+physics:hep-th
+physics:hep-ex
+physics:nucl-ex
+physics:quant-ph
+physics:math-ph
+physics:hep-lat
+q-bio
+physics:gr-qc
+physics:physics
+physics
+physics:astro-ph
+cs
+physics:nucl-th
+physics:cond-mat
+nlin
+q-fin
+physics:hep-ph
+math
