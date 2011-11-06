@@ -113,6 +113,11 @@ def analyze_dist_of_setSpecs(parser):
 
 
 def main(args):
+	if len(args) != 1:
+		print 'Usage: python arxivParser.py <arxiv dataset>'
+		exit()
+
+
 	p = ArxivParser(args[0])	
 	
 	# Anzahl der Anzahl der setSpecs pro Publikation
