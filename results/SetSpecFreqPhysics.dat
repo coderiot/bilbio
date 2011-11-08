@@ -1,0 +1,16 @@
+#Häufigkeit der Vorkommen der Themenbereiche in den Publikationen
+#Subject			Frequency
+physics:cond-mat 	141423
+physics:astro-ph 	141148
+physics:hep-ph 		91445
+physics:hep-th	 	82857
+physics:physics 	48312
+physics:quant-ph 	44553
+physics:gr-qc 		42217
+physics:math-ph 	27190
+physics:nucl-th 	26489
+physics:hep-ex	 	19070
+physics:hep-lat 	14655
+physics:nucl-ex	 	8986
+physics 			11
+
