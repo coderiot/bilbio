@@ -1,0 +1,106 @@
+\documentclass[12pt,utf8]{beamer}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{color}
+
+\usepackage[percent]{overpic}
+
+\lstset{literate={ö}{{ \"o}}1
+{ü}{{ \"u}}1
+{ä}{{ \"a}}1
+{ß}{{ \ss}}1
+}
+
+\lstset{
+language=XML,
+basicstyle=\scriptsize,
+breaklines=true
+}
+
+\input{theme.tex}
+
+\begin{document}
+\title{Algorithmen und Analyse auf bibliographischen Daten}   
+\author{peterr und Lusy} 
+\date{\today} 
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Eigenschaften des Datensatzes}
+	\begin{itemize}
+		\item  enthält ca. $700\,000$ Einträge 
+		\item  mit 19 verschiedenen Themengebieten(setSpecs) z.B. cs, math 
+		\item  nur der Themenbereich Physik wird in Themengruppen aufgeteilt
+		\item  11 Einträge haben keine Metadaten und damit keinen Titel, Autor usw.
+	\end{itemize} 
+\end{frame}
+\begin{frame}[fragile]
+	\frametitle{Aufbau der Datensatz}
+	\begin{block}{Header}
+	\begin{lstlisting}[language=HTML]
+		<identifier>oai:arXiv.org:0704.0001</identifier>
+		<datestamp>2008-11-26</datestamp>
+		<setSpec>physics:hep-ph</setSpec>
+	\end{lstlisting}
+	\end{block}
+	\begin{block}{Metadaten}
+		\begin{lstlisting}
+		  <dc:title>Titel des Papers</dc:title>
+		  <dc:creator>Author 1</dc:creator>
+		  <dc:creator>Author 2</dc:creator>
+		  <dc:subject>..</dc:subject>
+		  <dc:description>Beschreibung</dc:description>
+		  <dc:description>Comment</dc:description>
+		  <dc:date>2007-04-02</dc:date>
+		  <dc:date>2007-07-24</dc:date>
+		  <dc:type>text</dc:type>
+		  <dc:identifier>http://arxiv.org/abs/0704.0001</dc:identifier>
+		  <dc:identifier>Phys.Rev.D76:013009,2007</dc:identifier>
+		\end{lstlisting}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Parsen der Daten}
+	\begin{itemize}
+		\item  Parser in Python geschrieben 
+		\item  kompletter Datensatz in den Speicher
+		%\begin{itemsize}
+		%	\item Overhead des XML-Parser vergessen
+		%\end{itemsize}
+		\item  nur der Themenbereich Physik wird in Themengruppen aufgeteilt
+		\item  11 Einträge haben keine Metadaten und damit keinen Titel, Autor usw.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Verteilung der Themen}
+	\begin{center}
+		\includegraphics[scale=0.35]{../visual/treeParent.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Aufschlüsselung von physics}
+	\begin{center}
+		\includegraphics[scale=0.45]{../visual/setSpecFreq.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Häufigkeit von Themen pro Publikation}
+\end{frame}
+\begin{frame}
+	\frametitle{Assoziationsregeln auf setSpec}
+\end{frame}
+\begin{frame}
+	\frametitle{Probleme}
+\end{frame}
+\begin{frame}
+	\frametitle{Weitere Analysen}
+\end{frame}
+\end{document}
