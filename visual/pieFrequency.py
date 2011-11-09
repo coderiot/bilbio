@@ -40,6 +40,6 @@ fracs = [int(item0[1])/total,int(item1[1])/total,int(item2[1])/total,(int(item3[
 
 explode=(0, 0, 0, 0.1)
 pie(fracs, explode=explode, labels=labels, autopct='%1.1f%%', shadow = False)
-title('Haeufigkeit der Anzahl von Themen im arxiv.org Datensatz', bbox={'facecolor':'0.7', 'pad':5})
+title(u'Häufigkeit der Anzahl von Themen im arxiv.org Datensatz')
 
 show()
