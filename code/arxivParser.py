@@ -111,6 +111,21 @@ def analyze_dist_of_setSpecs(parser):
 	for r in set(result):
 		print r, result.count(r)
 
+def get_parent_setSpecs(record):
+	specs = record.get_setSpecs()
+	
+	result = list()
+
+	for s in specs:
+		if(s.startswith('physics')):
+			result.append('physics')
+		else:
+			result.append(s)
+
+	print ','.join(list(set(result)))
+
+def analyze_parent_setSpecs(parser):
+	result = parser.iter_records(get_parent_setSpecs)
 
 def main(args):
 	if len(args) != 1:
@@ -123,9 +138,13 @@ def main(args):
 	# Anzahl der Anzahl der setSpecs pro Publikation
 	#analyze_len_of_setSpecs(p)
 
-	analyze_dist_of_setSpecs(p)
+	#analyze_dist_of_setSpecs(p)
+	analyze_parent_setSpecs(p)
 
-	
+	#for r in result:
+	#	print ','.join(r)
+
+
 if __name__ == "__main__":
 	#main(sys.argv[1:])
 	t = timeit.Timer("main(args)", "from __main__ import main; args=%r" % sys.argv[1:])
