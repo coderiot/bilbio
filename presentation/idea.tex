@@ -1,4 +1,4 @@
-\documentclass[12pt,utf8]{beamer}
+\documentclass[12pt, xcolor=table]{beamer}
 \usepackage{graphicx}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
@@ -6,24 +6,14 @@
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{fancyvrb}
 \usepackage{color}
 
 \usepackage[percent]{overpic}
-
-\lstset{literate={ö}{{ \"o}}1
-{ü}{{ \"u}}1
-{ä}{{ \"a}}1
-{ß}{{ \ss}}1
-}
-
-\lstset{
-language=XML,
-basicstyle=\scriptsize,
-breaklines=true
-}
-
+\usepackage[footnotesize, bf]{caption}
 \input{theme.tex}
-
+\input{syntax}
+\renewcommand{\footnotesize}{\tiny}
 \begin{document}
 \title{Algorithmen und Analyse auf bibliographischen Daten}   
 \author{peterr und Lusy} 
@@ -36,35 +26,38 @@ breaklines=true
 \begin{frame}
 	\frametitle{Eigenschaften des Datensatzes}
 	\begin{itemize}
-		\item  enthält ca. $700\,000$ Einträge 
-		\item  mit 19 verschiedenen Themengebieten(setSpecs) z.B. cs, math 
-		\item  nur der Themenbereich Physik wird in Themengruppen aufgeteilt
-		\item  11 Einträge haben keine Metadaten und damit keinen Titel, Autor usw.
+		\item  enthält ca. $706\,000$ Einträge 
+		\item  mit 19 verschiedenen Themengebieten 
+		\item  nur der Themenbereich Physik wird in Themengruppen unterteiltt
+		\item  11 Einträge ohne Informationen
+		\item  die Publikationen haben im Durchschnitt 1.3 und maximal 9 Themen
 	\end{itemize} 
 \end{frame}
 \begin{frame}[fragile]
 	\frametitle{Aufbau der Datensatz}
 	\begin{block}{Header}
-	\begin{lstlisting}[language=HTML]
-		<identifier>oai:arXiv.org:0704.0001</identifier>
-		<datestamp>2008-11-26</datestamp>
-		<setSpec>physics:hep-ph</setSpec>
-	\end{lstlisting}
+	\begin{Verbatim}[commandchars=\\\{\}, fontsize=\tiny, frame=single]
+		\PY{n+nt}{<identifier}\PY{n+nt}{>}oai:arXiv.org:0704.0001\PY{n+nt}{</identifier>}
+		\PY{n+nt}{<datestamp}\PY{n+nt}{>}2007-07-24\PY{n+nt}{</datestamp>}
+		\PY{n+nt}{<setSpec}\PY{n+nt}{>}\textcolor{red}{\bf{physics:physics}}\PY{n+nt}{</setSpec>}
+		\PY{n+nt}{<setSpec}\PY{n+nt}{>}\textcolor{red}{\bf{math}}\PY{n+nt}{</setSpec>}
+	\end{Verbatim}
 	\end{block}
 	\begin{block}{Metadaten}
-		\begin{lstlisting}
-		  <dc:title>Titel des Papers</dc:title>
-		  <dc:creator>Author 1</dc:creator>
-		  <dc:creator>Author 2</dc:creator>
-		  <dc:subject>..</dc:subject>
-		  <dc:description>Beschreibung</dc:description>
-		  <dc:description>Comment</dc:description>
-		  <dc:date>2007-04-02</dc:date>
-		  <dc:date>2007-07-24</dc:date>
-		  <dc:type>text</dc:type>
-		  <dc:identifier>http://arxiv.org/abs/0704.0001</dc:identifier>
-		  <dc:identifier>Phys.Rev.D76:013009,2007</dc:identifier>
-		\end{lstlisting}
+		\begin{Verbatim}[commandchars=\\\{\}, fontsize=\tiny, frame=single]
+			\PY{n+nt}{<dc:title}\PY{n+nt}{>}Titel des Papers\PY{n+nt}{</dc:title>}
+			\PY{n+nt}{<dc:creator}\PY{n+nt}{>}Author 1\PY{n+nt}{</dc:creator>}
+			\PY{n+nt}{<dc:creator}\PY{n+nt}{>}Author 2\PY{n+nt}{</dc:creator>}
+			\PY{n+nt}{<dc:subject}\PY{n+nt}{>}\textcolor{red}{\bf{Physics - Optics}}\PY{n+nt}{</dc:subject>}
+			\PY{n+nt}{<dc:subject}\PY{n+nt}{>}\textcolor{red}{\bf{Mathematics - Combinatorics}}\PY{n+nt}{</dc:subject>}
+			\PY{n+nt}{<dc:description}\PY{n+nt}{>}Description\PY{n+nt}{</dc:description>}
+			\PY{n+nt}{<dc:description}\PY{n+nt}{>}Comment\PY{n+nt}{</dc:description>}
+			\PY{n+nt}{<dc:date}\PY{n+nt}{>}\textcolor{red}{\bf{2007-04-02}}\PY{n+nt}{</dc:date>}
+			\PY{n+nt}{<dc:date}\PY{n+nt}{>}\textcolor{red}{\bf{2007-07-24}}\PY{n+nt}{</dc:date>}
+			\PY{n+nt}{<dc:type}\PY{n+nt}{>}text\PY{n+nt}{</dc:type>}
+			\PY{n+nt}{<dc:identifier}\PY{n+nt}{>}http://arxiv.org/abs/0704.0001\PY{n+nt}{</dc:identifier>}
+			\PY{n+nt}{<dc:identifier}\PY{n+nt}{>}Phys.Rev.D76:013009,2007\PY{n+nt}{</dc:identifier>}
+		\end{Verbatim}
 	\end{block}
 \end{frame}
 \begin{frame}
@@ -72,11 +65,11 @@ breaklines=true
 	\begin{itemize}
 		\item  Parser in Python geschrieben 
 		\item  kompletter Datensatz in den Speicher
-		%\begin{itemsize}
-		%	\item Overhead des XML-Parser vergessen
-		%\end{itemsize}
-		\item  nur der Themenbereich Physik wird in Themengruppen aufgeteilt
-		\item  11 Einträge haben keine Metadaten und damit keinen Titel, Autor usw.
+			\begin{itemize}
+				\item Overhead des XML-Parser nicht beachtet
+			\end{itemize}
+		\item iterativer Ansatz \footnote{http://www.ibm.com/developerworks/xml/library/x-hiperfparse/}
+		\item benötigt ca. 70 Sekunden für 1.2 GB
 	\end{itemize}
 \end{frame}
 \begin{frame}
@@ -93,16 +86,93 @@ breaklines=true
 \end{frame}
 \begin{frame}
 	\frametitle{Häufigkeit von Themen pro Publikation}
+	\begin{columns}
+	        \column{.5\textwidth}
     \includegraphics[scale=0.35]{../visual/piechart.png}
+		\column{.5\textwidth}
     \includegraphics[scale=0.25]{../visual/pieSubplot.png}
+	\end{columns}
 \end{frame}
 \begin{frame}
-	\frametitle{Assoziationsregeln auf setSpec}
+	\frametitle{Was sind Assoziationsregeln?}
+	\begin{itemize}
+		\item Beschreibung
+		\item Regel der Form "Wenn Menge A, dann Menge B"
+		\item Kenngrößen
+		\begin{itemize}
+			\item Support - relative Häufigkeit der Regel in den Daten
+	 		\item Konfidenz - 
+	 		\item Lift
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Assoziationsregeln - aller Themen}
+	\begin{center}
+	\begin{table}
+	\rowcolors[]{1}{blue!20}{blue!10}
+	\begin{tabular}{rccc}
+		\tiny\textbf{Regel} &\tiny \textbf{Support} &\tiny \textbf{Konfidenz} & \tiny \textbf{Lift}\\
+		\hline
+		\tiny math $\implies$ stat & \tiny 0.6\% &\tiny 64\% &\tiny 3.0  \\
+		\tiny physics:math-ph $\implies$ math &\tiny 3.8 \% &\tiny 100\% &\tiny 4.7 \\
+		\tiny physics:hep-th, physics:math-ph  $\implies$ math &\tiny 0.9 \% &\tiny 100\% &\tiny 4.7 \\
+		\tiny math, physics:hep-th  $\implies$ physics:math-ph  &\tiny 0.9 \% &\tiny 63\% &\tiny 16.3 \\
+		\tiny physics:gr-qc, physics:hep-th $\implies$ physics:hep-th &\tiny 0.6 \% &\tiny 72 \% &\tiny 6.1 \\
+		\tiny physics:gr-qc, physics:hep-th $\implies$ physics:astro-ph &\tiny 0.6 \% &\tiny 70 \% &\tiny 3.5 \\
+		\tiny physics:gr-qc, physics:astro-ph $\implies$ physics:hep-th &\tiny 0.9 \% &\tiny 50 \%  &\tiny 4.3 \\
+		\tiny physics:astro-ph, physics:hep-th $\implies$ physics:gr-qc  &\tiny 0.9 \% &\tiny 74 \% &\tiny 12.4 \\
+	\end{tabular}
+	 \caption*{Support: 0.5 \% und Konfidenz 50 \%}
+	\end{table}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Assoziationsregeln - Oberthemen}
+	\begin{center}
+	\begin{table}
+	\rowcolors[]{1}{blue!20}{blue!10}
+	\begin{tabular}{rccc}
+		\tiny\textbf{Regel} &\tiny \textbf{Support} &\tiny \textbf{Konfidenz} & \tiny \textbf{Lift}\\
+		\hline
+		\tiny  $\emptyset \implies$ physics & \tiny 78\% &\tiny 78\% &\tiny 1.0  \\
+		\tiny stat $\implies$ math  &\tiny 0.6 \% &\tiny 63 \% &\tiny 3.0 \\
+		\tiny nlin $\implies$ physics  &\tiny 1.3 \% &\tiny 50 \% &\tiny 0.64 \\
+		\tiny math, nlin $\implies$ physics  &\tiny 0.4 \% &\tiny 83 \% &\tiny 1.1 \\
+	\end{tabular}
+	 \caption*{Support: 0.1 \% und Konfidenz 50 \%}
+	\end{table}
+	\end{center}
 \end{frame}
 \begin{frame}
 	\frametitle{Probleme}
+	\begin{itemize}
+		\item mehrere Datumsangaben
+		\item Themenbereiche nicht uniform
+		\item Aufwendig Themenbereiche nachzuschlagen
+	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Weitere Analysen}
+	\begin{itemize}
+		\item Aufschlüsselung der Themenbereiche
+		\item Regeln für die Unterthemen
+		\item Algorithmus implementieren?
+			\begin{itemize}
+				\item AIS-Algorithmnus
+				\item Apriori-Algorithmus 
+				\item FPGrowth 
+			\end{itemize}
+		\item Entwicklung in Abhängigkeit von der Zeit
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Beschreibung}
+\begin{description}[Second Item]
+	\item[First Item] Description of first item
+	\item[Second Item] Description of second item
+	\item[Third Item] Description of third item
+	\item[Forth Item] Description of forth item
+\end{description}
 \end{frame}
 \end{document}
