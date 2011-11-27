@@ -73,12 +73,12 @@ class ArxivParser(object):
 	def __init__(self, xmlFile):
 		# iteratives Parsen über die Records mit default-Event 'end'
 		self.context = ET.iterparse(
-				os.path.abspath(xmlFile), 
-				events=('end',), 
+				os.path.abspath(xmlFile),
+				events=('end',),
 				tag='{%s}record' % Record.ns0)
 
 		self.count = 0;
-	
+
 	def iter_records(self, handle):
 		result = list()
 		for event, elem in self.context:
@@ -97,7 +97,7 @@ class ArxivParser(object):
 
 def analyze_len_of_setSpecs(parser):
 	len_of_setSpec = lambda x: len(x.get_setSpecs())
-	
+
 	result =  parser.iter_records(len_of_setSpec)
 
 	for r in set(result):
@@ -113,7 +113,7 @@ def analyze_dist_of_setSpecs(parser):
 
 def get_parent_setSpecs(record):
 	specs = record.get_setSpecs()
-	
+
 	result = list()
 
 	for s in specs:
@@ -133,8 +133,8 @@ def main(args):
 		exit()
 
 
-	p = ArxivParser(args[0])	
-	
+	p = ArxivParser(args[0])
+
 	# Anzahl der Anzahl der setSpecs pro Publikation
 	#analyze_len_of_setSpecs(p)
 
