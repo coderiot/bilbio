@@ -1,0 +1,9 @@
+> library(arulesViz)
+> data <- read.transactions('cs_subs1.dat', sep=';', rm.duplicates=TRUE)
+> rules <- apriori(data, parameter = list(supp=0.01, conf=0.5, target = "rules"))
+> plot(rules, method="graph",
++ control=list(type="items"))
+
+png("plot.png")
+plot(x,y)
+dev.off()
