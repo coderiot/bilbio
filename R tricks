@@ -1,0 +1,15 @@
+R - activate library:
+
+library(arules)
+
+data <- read.transactions('cs_subjects.dat', sep=',', rm.duplicates=TRUE)
+
+summary(data)
+
+rules <- apriori(data, parameter = list(supp=0.01, conf = 0.5, target= "rules"))
+
+inspect(rules)
+
+R - install package
+> install.packages("arulesViz", repos="http://R-Forge.R-project.org")
+(wenn es standard package ist, kann man auf eingabe des repos verzichten)
