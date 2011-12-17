@@ -11,6 +11,10 @@ rules <- apriori(data, parameter = list(supp=0.01, conf = 0.5, target= "rules"))
 inspect(rules)
 inspect(head(sort(rules, by="lift"),3))
 
+#writing output to file
+out <- capture.output(inspect(rules))
+cat(out,file="bla.txt",sep="\n",append=TRUE)
+
 
 R - install package
 > install.packages("arulesViz", repos="http://R-Forge.R-project.org")
