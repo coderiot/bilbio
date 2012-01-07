@@ -120,26 +120,49 @@ def get_parent_setSpecs(record):
 		if(s.startswith('physics')):
 			result.append('physics')
 		else:
-			result.append(s)
+		    result.append(s)
+
+    #Lusy's addition
+    #return result
 
 	print ','.join(list(set(result)))
+
+def get_parent_cs(record):
+    specs = record.get_setSpecs()
+    result = list()
+
+    if 'cs' in specs:
+        subjects = record.get_subjects()
+
+        for s in subjects:
+            if s != None:
+                result.append(s)
+
+        if result != None:
+            print ';'.join(list(set(result)))
+
+def get_subjects_cs(parser):
+    result = parser.iter_records(get_parent_cs)
 
 def analyze_parent_setSpecs(parser):
 	result = parser.iter_records(get_parent_setSpecs)
 
 def main(args):
-	if len(args) != 1:
-		print 'Usage: python arxivParser.py <arxiv dataset>'
-		exit()
+    if len(args) != 1:
+	    print 'Usage: python arxivParser.py <arxiv dataset>'
+	    exit()
 
 
-	p = ArxivParser(args[0])
+    p = ArxivParser(args[0])
 
-	# Anzahl der Anzahl der setSpecs pro Publikation
+    # Return all record in CS
+    get_subjects_cs(p)
+
+    # Anzahl der Anzahl der setSpecs pro Publikation
 	#analyze_len_of_setSpecs(p)
 
 	#analyze_dist_of_setSpecs(p)
-	analyze_parent_setSpecs(p)
+	#analyze_parent_setSpecs(p)
 
 	#for r in result:
 	#	print ','.join(r)
