@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{fancyvrb}
 \usepackage{color}
+\usepackage{alltt}
 
 \usepackage[percent]{overpic}
 \usepackage[footnotesize, bf]{caption}
@@ -15,12 +16,23 @@
 \input{syntax}
 \renewcommand{\footnotesize}{\tiny}
 \begin{document}
-\title{Algorithmen und Analyse auf bibliographischen Daten}   
-\author{peterr und Lusy} 
-\date{\today} 
+\title{Algorithmen und Analyse auf bibliographischen Daten}
+\author{peterr und Lusy}
+\date{\today}
 
 \begin{frame}
 	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Eigenschaften des Datensatzes}
+	\begin{itemize}
+		\item  enthält ca. $706\,000$ Einträge
+		\item  mit 19 verschiedenen Themengebieten
+		\item  nur der Themenbereich Physik wird in Themengruppen unterteilt
+		\item  11 Einträge ohne Informationen
+		\item  Publikationen haben im Durchschnitt 1.3 und maximal 9 Themen
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -29,6 +41,14 @@
 		\includegraphics[scale=0.35]{../../visual/treeParent2.png}
 	\end{center}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Verteilung der Themen in Computer Science}
+    \begin{block}{Subjects in CS: Summary}
+    	\include{summary_cs_subjects}
+	\end{block}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Verteilung der Themen in Computer Science}
 	\begin{center}
@@ -36,16 +56,52 @@
 	\end{center}
 \end{frame}
 \begin{frame}
+	\frametitle{Verteilung der Themen in Computer Science}
+    VOSviewer demo
+	\begin{center}
+		\includegraphics[scale=0.25]{../../visual/cs_subs_cluster_density.png}
+	\end{center}
+\end{frame}
+\begin{frame}
 	\frametitle{Entwicklung über die Zeit}
 \end{frame}
 \begin{frame}
 	\frametitle{Interpretation der Ergebnisse}
+    \begin{block}{Assoziationsregeln - Kenngrößen}
+    \begin{center}
+        \begin{itemize}
+			\item Support - relative Häufigkeit der Menge in den Daten
+			\item Konfidenz - Häufikeit des gemeinsames Auftretens von A und B, unter der Bedingung das A auftritt
+			\item Lift - Bedeutung der Regel
+	    \end{itemize}
+    \end{center}
+    \end{block}
 \end{frame}
+\begin{frame}
+    \frametitle{Interpretation der Ergebnisse}
+    \begin{block}{Arules für supp=0.01}
+        \begin{itemize}
+            \item Show rules - results from R
+            \item Visualize - choose an apropriate diagramm
+        \end{itemize}
+    \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Interpretation der Ergebnisse}
+    \begin{block}{Arules für supp=0.001}
+        \begin{itemize}
+           \item Same as above
+           \item Arules sorted according to supp, conf, lift
+        \end{itemize}
+    \end{block}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Umgang mit den Klassifikationen}
 \end{frame}
 \begin{frame}
 	\frametitle{Nutzen der verschiedenen Klassifikationen}
+    Mappings zwischen den Klassifikationen
 \end{frame}
 %\begin{frame}
 	%\frametitle{Eigenschaften des Datensatzes}
