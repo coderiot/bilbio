@@ -1,0 +1,8 @@
+  lhs                                                     rhs                                                     support confidence      lift
+1 {I.2.7}                                              => {Computer Science - Computation and Language}        0.01292103  0.9147609 16.929540
+2 {Computer Science - Systems and Control}             => {Mathematics - Optimization and Control}             0.01450680  0.8758865 34.126503
+3 {Mathematics - Optimization and Control}             => {Computer Science - Systems and Control}             0.01450680  0.5652174 34.126503
+4 {Computer Science - Social and Information Networks} => {Physics - Physics and Society}                      0.01700291  0.8212766 25.540577
+5 {Physics - Physics and Society}                      => {Computer Science - Social and Information Networks} 0.01700291  0.5287671 25.540577
+6 {F.4.1}                                              => {Computer Science - Logic in Computer Science}       0.01603383  0.7777778 10.602749
+7 {Mathematics - Combinatorics}                        => {Computer Science - Discrete Mathematics}            0.01706164  0.5354839  7.924742

@@ -1,0 +1,374 @@
+    lhs                                                            rhs                                                                   support confidence       lift
+1   {Mathematics - Combinatorics}                               => {Computer Science - Discrete Mathematics}                         0.017061639  0.5354839   7.924742
+2   {Computer Science - Social and Information Networks}        => {Physics - Physics and Society}                                   0.017002907  0.8212766  25.540577
+3   {Physics - Physics and Society}                             => {Computer Science - Social and Information Networks}              0.017002907  0.5287671  25.540577
+4   {F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.016033830  0.7777778  10.602749
+5   {Computer Science - Systems and Control}                    => {Mathematics - Optimization and Control}                          0.014506798  0.8758865  34.126503
+6   {Mathematics - Optimization and Control}                    => {Computer Science - Systems and Control}                          0.014506798  0.5652174  34.126503
+7   {I.2.7}                                                     => {Computer Science - Computation and Language}                     0.012921035  0.9147609  16.929540
+8   {G.2.2}                                                     => {Computer Science - Discrete Mathematics}                         0.007928817  0.5934066   8.781953
+9   {I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.007077203  0.8169492   9.136148
+10  {F.1.3}                                                     => {Computer Science - Computational Complexity}                     0.006812909  0.8560886  12.565683
+11  {I.2.3}                                                     => {Computer Science - Artificial Intelligence}                      0.006343053  0.7081967   7.919942
+12  {Mathematics - Logic}                                       => {Computer Science - Logic in Computer Science}                    0.006254956  0.7717391  10.520429
+13  {C.2.1}                                                     => {Computer Science - Networking and Internet Architecture}         0.005961296  0.8055556  10.312625
+14  {I.2.6}                                                     => {Computer Science - Learning}                                     0.005902564  0.5775862  13.639766
+15  {C.2.4}                                                     => {Computer Science - Distributed, Parallel, and Cluster Computing} 0.005873198  0.8000000  15.683592
+16  {Statistics - Machine Learning}                             => {Computer Science - Learning}                                     0.005638270  0.5393258  12.736243
+17  {E.4}                                                       => {Computer Science - Information Theory}                           0.005197780  0.7108434   3.642243
+18  {Mathematics - Statistics Theory}                           => {Computer Science - Information Theory}                           0.005080316  0.5423197   2.778756
+19  {H.3.3}                                                     => {Computer Science - Information Retrieval}                        0.004874754  0.6125461  22.972504
+20  {F.3.1}                                                     => {Computer Science - Logic in Computer Science}                    0.004845388  0.8009709  10.918920
+21  {Mathematics - Numerical Analysis}                          => {Computer Science - Numerical Analysis}                           0.004669192  0.5317726  33.910958
+22  {H.1.1}                                                     => {Computer Science - Information Theory}                           0.004610460  0.7810945   4.002199
+23  {G.2.1}                                                     => {Computer Science - Discrete Mathematics}                         0.004375532  0.6340426   9.383334
+24  {F.3.2}                                                     => {Computer Science - Logic in Computer Science}                    0.004169970  0.6794258   9.262005
+25  {F.3.2}                                                     => {Computer Science - Programming Languages}                        0.004023140  0.6555024  21.360596
+26  {F.2.2,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Data Structures and Algorithms}               0.003876310  0.6839378   8.092472
+27  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     G.2.2}                                                     => {F.2.2}                                                           0.003876310  0.6000000  21.461975
+28  {D.4.6}                                                     => {Computer Science - Cryptography and Security}                    0.003377089  0.9274194  16.465804
+29  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     G.2.2}                                                     => {Computer Science - Discrete Mathematics}                         0.003259625  0.5045455   7.466878
+30  {D.2.4}                                                     => {Computer Science - Logic in Computer Science}                    0.003230259  0.6250000   8.520066
+31  {D.3.3}                                                     => {Computer Science - Programming Languages}                        0.003230259  0.6790123  22.126706
+32  {Computer Science - Social and Information Networks,                                                                                                              
+     Condensed Matter - Statistical Mechanics}                  => {Physics - Physics and Society}                                   0.003200893  0.9909091  30.815915
+33  {Condensed Matter - Statistical Mechanics,                                                                                                                        
+     Physics - Physics and Society}                             => {Computer Science - Social and Information Networks}              0.003200893  0.5736842  27.710168
+34  {F.2.2,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Discrete Mathematics}                         0.003142161  0.5544041   8.204748
+35  {I.2.8}                                                     => {Computer Science - Artificial Intelligence}                      0.003112795  0.5921788   6.622484
+36  {Computer Science - Artificial Intelligence,                                                                                                                      
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.003112795  0.5988701   8.163860
+37  {H.3.7}                                                     => {Computer Science - Digital Libraries}                            0.002848501  0.8899083  48.720331
+38  {D.2.5}                                                     => {Computer Science - Software Engineering}                         0.002819135  0.6857143  23.211360
+39  {D.3.2}                                                     => {Computer Science - Programming Languages}                        0.002731037  0.6739130  21.960537
+40  {F.4.1,                                                                                                                                                           
+     I.2.3}                                                     => {Computer Science - Logic in Computer Science}                    0.002731037  0.6940299   9.461088
+41  {Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.3}                                                     => {F.4.1}                                                           0.002731037  0.6549296  31.769682
+42  {E.1}                                                       => {Computer Science - Data Structures and Algorithms}               0.002701671  0.7022901   8.309619
+43  {D.1.6}                                                     => {Computer Science - Programming Languages}                        0.002672305  0.5652174  18.418515
+44  {H.3.1}                                                     => {Computer Science - Information Retrieval}                        0.002613573  0.6592593  24.724400
+45  {I.3.5}                                                     => {Computer Science - Computational Geometry}                       0.002584207  0.8800000  31.182768
+46  {D.1.3}                                                     => {Computer Science - Distributed, Parallel, and Cluster Computing} 0.002554841  0.8055556  15.792506
+47  {Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.002554841  0.7250000   8.107857
+48  {E.3}                                                       => {Computer Science - Cryptography and Security}                    0.002525475  0.9247312  16.418077
+49  {Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.3}                                                     => {Computer Science - Artificial Intelligence}                      0.002525475  0.6056338   6.772955
+50  {D.3.1}                                                     => {Computer Science - Programming Languages}                        0.002349279  0.5970149  19.454688
+51  {H.5.2}                                                     => {Computer Science - Human-Computer Interaction}                   0.002290547  0.5820896  33.653473
+52  {F.4.1,                                                                                                                                                           
+     I.2.3}                                                     => {Computer Science - Artificial Intelligence}                      0.002290547  0.5820896   6.509654
+53  {Computer Science - Computational Complexity,                                                                                                                     
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.002261181  0.7196262   9.810020
+54  {Computer Science - Social and Information Networks,                                                                                                              
+     Physics - Data Analysis, Statistics and Probability}       => {Physics - Physics and Society}                                   0.002231815  0.9620253  29.917669
+55  {Physics - Data Analysis, Statistics and Probability,                                                                                                             
+     Physics - Physics and Society}                             => {Computer Science - Social and Information Networks}              0.002231815  0.5588235  26.992365
+56  {F.4.3}                                                     => {Computer Science - Logic in Computer Science}                    0.002202449  0.5033557   6.861798
+57  {C.2.2}                                                     => {Computer Science - Networking and Internet Architecture}         0.002173083  0.7551020   9.666725
+58  {H.2.8}                                                     => {Computer Science - Databases}                                    0.002173083  0.5692308  19.059995
+59  {E.4,                                                                                                                                                             
+     H.1.1}                                                     => {Computer Science - Information Theory}                           0.002173083  0.8505747   4.358204
+60  {Computer Science - Programming Languages,                                                                                                                        
+     F.3.2}                                                     => {Computer Science - Logic in Computer Science}                    0.002173083  0.5401460   7.363327
+61  {Computer Science - Logic in Computer Science,                                                                                                                    
+     F.3.2}                                                     => {Computer Science - Programming Languages}                        0.002173083  0.5211268  16.981751
+62  {I.2.11}                                                    => {Computer Science - Multiagent Systems}                           0.002143717  0.5328467  35.859741
+63  {K.6.5}                                                     => {Computer Science - Cryptography and Security}                    0.002114351  0.9000000  15.978989
+64  {F.4.1,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Logic in Computer Science}                    0.002114351  0.7826087  10.668604
+65  {Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.4}                                                     => {F.4.1}                                                           0.002114351  0.6000000  29.105128
+66  {D.3.1}                                                     => {Computer Science - Logic in Computer Science}                    0.002084985  0.5298507   7.222981
+67  {F.3.1,                                                                                                                                                           
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.002084985  0.8987342  12.251639
+68  {K.4.m Miscellaneous}                                       => {Computer Science - Computers and Society}                        0.002055619  0.9589041  53.442818
+69  {Mathematics - Category Theory}                             => {Computer Science - Logic in Computer Science}                    0.002055619  0.7142857   9.737218
+70  {I.2.3,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.002026253  0.8625000   9.645554
+71  {H.3.1}                                                     => {Computer Science - Computation and Language}                     0.001996887  0.5037037   9.322077
+72  {Computer Science - Discrete Mathematics,                                                                                                                         
+     F.2.2,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Data Structures and Algorithms}               0.001996887  0.6355140   7.519513
+73  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     F.2.2,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Discrete Mathematics}                         0.001996887  0.5151515   7.623839
+74  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     Computer Science - Discrete Mathematics,                                                                                                                         
+     G.2.2}                                                     => {F.2.2}                                                           0.001996887  0.6126126  21.913127
+75  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     Computer Science - Discrete Mathematics,                                                                                                                         
+     F.2.2}                                                     => {G.2.2}                                                           0.001996887  0.5964912  44.642452
+76  {I.2.6,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001967521  0.7790698  14.418295
+77  {Computer Science - Computation and Language,                                                                                                                     
+     I.2.6}                                                     => {I.2.7}                                                           0.001967521  0.9178082  64.977387
+78  {H.4.1}                                                     => {K.6.4}                                                           0.001938155  0.9166667 439.651408
+79  {K.6.4}                                                     => {H.4.1}                                                           0.001938155  0.9295775 439.651408
+80  {D.3.4}                                                     => {Computer Science - Programming Languages}                        0.001908789  0.8552632  27.870121
+81  {H.2.4}                                                     => {Computer Science - Databases}                                    0.001908789  0.5855856  19.607616
+82  {F.4.1,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.001908789  0.7065217   7.901210
+83  {F.2.2,                                                                                                                                                           
+     G.2.1}                                                     => {Computer Science - Discrete Mathematics}                         0.001820691  0.5585586   8.266230
+84  {I.2.0}                                                     => {Computer Science - Artificial Intelligence}                      0.001761959  0.8333333   9.319376
+85  {G.2.2,                                                                                                                                                           
+     Mathematics - Combinatorics}                               => {Computer Science - Discrete Mathematics}                         0.001761959  0.8823529  13.058133
+86  {I.2}                                                       => {Computer Science - Artificial Intelligence}                      0.001732593  0.8428571   9.425883
+87  {H.3.3,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001732593  0.8939394  16.544195
+88  {Computer Science - Computation and Language,                                                                                                                     
+     H.3.3}                                                     => {I.2.7}                                                           0.001732593  0.6704545  47.465673
+89  {Computer Science - Artificial Intelligence,                                                                                                                      
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001703227  0.7733333  14.312130
+90  {Computer Science - Programming Languages,                                                                                                                        
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.001703227  0.6904762   9.412644
+91  {F.2.2,                                                                                                                                                           
+     G.2.1}                                                     => {Computer Science - Data Structures and Algorithms}               0.001644495  0.5045045   5.969386
+92  {Computer Science - Data Structures and Algorithms,                                                                                                               
+     G.2.1}                                                     => {F.2.2}                                                           0.001644495  0.6021505  21.538899
+93  {K.8.1}                                                     => {H.4.1}                                                           0.001615129  0.9166667 433.545139
+94  {H.4.1}                                                     => {K.8.1}                                                           0.001615129  0.7638889 433.545139
+95  {K.8.1}                                                     => {K.6.4}                                                           0.001615129  0.9166667 439.651408
+96  {K.6.4}                                                     => {K.8.1}                                                           0.001615129  0.7746479 439.651408
+97  {H.4.1,                                                                                                                                                           
+     K.8.1}                                                     => {K.6.4}                                                           0.001615129  1.0000000 479.619718
+98  {K.6.4,                                                                                                                                                           
+     K.8.1}                                                     => {H.4.1}                                                           0.001615129  1.0000000 472.958333
+99  {H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {K.8.1}                                                           0.001615129  0.8333333 472.958333
+100 {G.2.1,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Discrete Mathematics}                         0.001615129  0.6875000  10.174462
+101 {F.1.1,                                                                                                                                                           
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.001615129  0.7971014  10.866171
+102 {Computer Science - Logic in Computer Science,                                                                                                                    
+     F.4.1,                                                                                                                                                           
+     I.2.3}                                                     => {Computer Science - Artificial Intelligence}                      0.001585763  0.5806452   6.493501
+103 {Computer Science - Artificial Intelligence,                                                                                                                      
+     F.4.1,                                                                                                                                                           
+     I.2.3}                                                     => {Computer Science - Logic in Computer Science}                    0.001585763  0.6923077   9.437612
+104 {Computer Science - Artificial Intelligence,                                                                                                                      
+     Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.3}                                                     => {F.4.1}                                                           0.001585763  0.6279070  30.458855
+105 {Computer Science - Artificial Intelligence,                                                                                                                      
+     Computer Science - Logic in Computer Science,                                                                                                                    
+     F.4.1}                                                     => {I.2.3}                                                           0.001585763  0.5094340  56.877884
+106 {H.2.3}                                                     => {Computer Science - Databases}                                    0.001556397  0.9137931  30.597243
+107 {Computer Science - Programming Languages,                                                                                                                        
+     F.3.1}                                                     => {Computer Science - Logic in Computer Science}                    0.001527031  0.6933333   9.451593
+108 {I.2.6,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Learning}                                     0.001527031  0.6046512  14.278908
+109 {Computer Science - Learning,                                                                                                                                     
+     I.2.7}                                                     => {I.2.6}                                                           0.001527031  0.9629630  94.229246
+110 {D.2.4,                                                                                                                                                           
+     F.3.1}                                                     => {Computer Science - Logic in Computer Science}                    0.001497665  0.7611940  10.376677
+111 {F.1.3,                                                                                                                                                           
+     F.2.2}                                                     => {Computer Science - Computational Complexity}                     0.001497665  0.9807692  14.395748
+112 {I.2.3,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Logic in Computer Science}                    0.001468299  0.6250000   8.520066
+113 {C.2.3}                                                     => {Computer Science - Networking and Internet Architecture}         0.001438933  0.8166667  10.454868
+114 {I.1.2}                                                     => {Computer Science - Symbolic Computation}                         0.001438933  0.5975610  40.135590
+115 {H.3.1,                                                                                                                                                           
+     H.3.3}                                                     => {Computer Science - Information Retrieval}                        0.001438933  0.8448276  31.683826
+116 {Computer Science - Information Retrieval,                                                                                                                        
+     H.3.1}                                                     => {H.3.3}                                                           0.001438933  0.5505618  69.181848
+117 {Computer Science - Data Structures and Algorithms,                                                                                                               
+     G.2.1}                                                     => {Computer Science - Discrete Mathematics}                         0.001438933  0.5268817   7.797437
+118 {Computer Science - Logic in Computer Science,                                                                                                                    
+     F.4.1,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.001409567  0.6666667   7.455501
+119 {Computer Science - Artificial Intelligence,                                                                                                                      
+     F.4.1,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Logic in Computer Science}                    0.001409567  0.7384615  10.066786
+120 {Computer Science - Artificial Intelligence,                                                                                                                      
+     Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.4}                                                     => {F.4.1}                                                           0.001409567  0.5517241  26.763336
+121 {I.2.9}                                                     => {Computer Science - Robotics}                                     0.001380201  0.7460317  52.058646
+122 {F.3.2,                                                                                                                                                           
+     F.4.1}                                                     => {Computer Science - Logic in Computer Science}                    0.001350835  0.8214286  11.197801
+123 {Computer Science - Computational Complexity,                                                                                                                     
+     Condensed Matter - Disordered Systems and Neural Networks} => {Condensed Matter - Statistical Mechanics}                        0.001350835  0.6301370  37.514082
+124 {Mathematics - Commutative Algebra}                         => {Computer Science - Symbolic Computation}                         0.001321469  0.5555556  37.314267
+125 {D.2.11}                                                    => {Computer Science - Software Engineering}                         0.001321469  0.5232558  17.712157
+126 {F.4.1,                                                                                                                                                           
+     F.4.3}                                                     => {Computer Science - Logic in Computer Science}                    0.001321469  0.8490566  11.574429
+127 {Computer Science - Logic in Computer Science,                                                                                                                    
+     F.4.3}                                                     => {F.4.1}                                                           0.001321469  0.6000000  29.105128
+128 {Computer Science - Computational Complexity,                                                                                                                     
+     Mathematics - Logic}                                       => {Computer Science - Logic in Computer Science}                    0.001292103  0.6197183   8.448065
+129 {I.2.10}                                                    => {Computer Science - Computer Vision and Pattern Recognition}      0.001262737  0.8113208  26.823209
+130 {D.3.1,                                                                                                                                                           
+     F.3.2}                                                     => {Computer Science - Programming Languages}                        0.001262737  0.7678571  25.021856
+131 {Computer Science - Programming Languages,                                                                                                                        
+     D.3.1}                                                     => {F.3.2}                                                           0.001262737  0.5375000  87.576495
+132 {G.2.1,                                                                                                                                                           
+     G.2.2}                                                     => {Computer Science - Data Structures and Algorithms}               0.001262737  0.5375000   6.359794
+133 {Computer Science - Computation and Language,                                                                                                                     
+     I.2.6}                                                     => {Computer Science - Learning}                                     0.001262737  0.5890411  13.910275
+134 {Computer Science - Computation and Language,                                                                                                                     
+     Computer Science - Learning}                               => {I.2.6}                                                           0.001262737  0.5657895  55.364451
+135 {F.2.0}                                                     => {Computer Science - Data Structures and Algorithms}               0.001233372  0.5060241   5.987366
+136 {F.1.1,                                                                                                                                                           
+     F.1.2}                                                     => {Computer Science - Logic in Computer Science}                    0.001233372  0.5915493   8.064063
+137 {Computer Science - Logic in Computer Science,                                                                                                                    
+     F.1.2}                                                     => {F.1.1}                                                           0.001233372  0.5526316  52.566378
+138 {Computer Science - Social and Information Networks,                                                                                                              
+     Condensed Matter - Disordered Systems and Neural Networks} => {Physics - Physics and Society}                                   0.001233372  0.9333333  29.025388
+139 {Condensed Matter - Disordered Systems and Neural Networks,                                                                                                       
+     Physics - Physics and Society}                             => {Computer Science - Social and Information Networks}              0.001233372  0.5185185  25.045548
+140 {Computer Science - Information Retrieval,                                                                                                                        
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001233372  0.7924528  14.665976
+141 {Computer Science - Learning,                                                                                                                                     
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001233372  0.7777778  14.394384
+142 {Computer Science - Computation and Language,                                                                                                                     
+     Computer Science - Learning}                               => {I.2.7}                                                           0.001233372  0.5526316  39.124248
+143 {K.6.5}                                                     => {D.4.6}                                                           0.001204006  0.5125000 140.743246
+144 {J.1}                                                       => {H.4.1}                                                           0.001204006  0.6029412 285.166054
+145 {H.4.1}                                                     => {J.1}                                                             0.001204006  0.5694444 285.166054
+146 {H.3.1,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001204006  0.8541667  15.808118
+147 {Computer Science - Computation and Language,                                                                                                                     
+     H.3.1}                                                     => {I.2.7}                                                           0.001204006  0.6029412  42.685979
+148 {Computer Science - Computation and Language,                                                                                                                     
+     H.3.1}                                                     => {Computer Science - Information Retrieval}                        0.001204006  0.6029412  22.612286
+149 {C.2.0}                                                     => {Computer Science - Cryptography and Security}                    0.001174640  0.6896552  12.244436
+150 {K.8.1}                                                     => {D.2.5}                                                           0.001174640  0.6666667 162.157143
+151 {H.4.1}                                                     => {D.2.5}                                                           0.001174640  0.5555556 135.130952
+152 {K.6.4}                                                     => {D.2.5}                                                           0.001174640  0.5633803 137.034205
+153 {D.4.6,                                                                                                                                                           
+     K.6.5}                                                     => {Computer Science - Cryptography and Security}                    0.001174640  0.9756098  17.321397
+154 {Computer Science - Cryptography and Security,                                                                                                                    
+     K.6.5}                                                     => {D.4.6}                                                           0.001174640  0.5555556 152.567204
+155 {F.2.2,                                                                                                                                                           
+     I.3.5}                                                     => {Computer Science - Computational Geometry}                       0.001174640  0.9756098  34.570696
+156 {H.4.1,                                                                                                                                                           
+     K.8.1}                                                     => {D.2.5}                                                           0.001174640  0.7272727 176.898701
+157 {D.2.5,                                                                                                                                                           
+     K.8.1}                                                     => {H.4.1}                                                           0.001174640  1.0000000 472.958333
+158 {D.2.5,                                                                                                                                                           
+     H.4.1}                                                     => {K.8.1}                                                           0.001174640  1.0000000 567.550000
+159 {K.6.4,                                                                                                                                                           
+     K.8.1}                                                     => {D.2.5}                                                           0.001174640  0.7272727 176.898701
+160 {D.2.5,                                                                                                                                                           
+     K.8.1}                                                     => {K.6.4}                                                           0.001174640  1.0000000 479.619718
+161 {D.2.5,                                                                                                                                                           
+     K.6.4}                                                     => {K.8.1}                                                           0.001174640  1.0000000 567.550000
+162 {H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {D.2.5}                                                           0.001174640  0.6060606 147.415584
+163 {D.2.5,                                                                                                                                                           
+     H.4.1}                                                     => {K.6.4}                                                           0.001174640  1.0000000 479.619718
+164 {D.2.5,                                                                                                                                                           
+     K.6.4}                                                     => {H.4.1}                                                           0.001174640  1.0000000 472.958333
+165 {Computer Science - Systems and Control,                                                                                                                          
+     Mathematics - Dynamical Systems}                           => {Mathematics - Optimization and Control}                          0.001174640  0.9523810  37.106898
+166 {Mathematics - Dynamical Systems,                                                                                                                                 
+     Mathematics - Optimization and Control}                    => {Computer Science - Systems and Control}                          0.001174640  0.8333333  50.314716
+167 {Computer Science - Computational Geometry,                                                                                                                       
+     G.2.2}                                                     => {F.2.2}                                                           0.001174640  0.8510638  30.442517
+168 {H.4.1,                                                                                                                                                           
+     K.6.4,                                                                                                                                                           
+     K.8.1}                                                     => {D.2.5}                                                           0.001174640  0.7272727 176.898701
+169 {D.2.5,                                                                                                                                                           
+     H.4.1,                                                                                                                                                           
+     K.8.1}                                                     => {K.6.4}                                                           0.001174640  1.0000000 479.619718
+170 {D.2.5,                                                                                                                                                           
+     K.6.4,                                                                                                                                                           
+     K.8.1}                                                     => {H.4.1}                                                           0.001174640  1.0000000 472.958333
+171 {D.2.5,                                                                                                                                                           
+     H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {K.8.1}                                                           0.001174640  1.0000000 567.550000
+172 {Computer Science - Computation and Language,                                                                                                                     
+     I.2.6,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Learning}                                     0.001174640  0.5970149  14.098578
+173 {Computer Science - Learning,                                                                                                                                     
+     I.2.6,                                                                                                                                                           
+     I.2.7}                                                     => {Computer Science - Computation and Language}                     0.001174640  0.7692308  14.236204
+174 {Computer Science - Computation and Language,                                                                                                                     
+     Computer Science - Learning,                                                                                                                                     
+     I.2.6}                                                     => {I.2.7}                                                           0.001174640  0.9302326  65.856984
+175 {Computer Science - Computation and Language,                                                                                                                     
+     Computer Science - Learning,                                                                                                                                     
+     I.2.7}                                                     => {I.2.6}                                                           0.001174640  0.9523810  93.193760
+176 {D.2.9}                                                     => {K.6.4}                                                           0.001145274  0.6610169 317.036763
+177 {K.6.4}                                                     => {D.2.9}                                                           0.001145274  0.5492958 317.036763
+178 {G.4}                                                       => {Computer Science - Mathematical Software}                        0.001145274  0.5064935  67.373529
+179 {Computer Science - Logic in Computer Science,                                                                                                                    
+     I.2.3,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Artificial Intelligence}                      0.001145274  0.7800000   8.722936
+180 {Computer Science - Artificial Intelligence,                                                                                                                      
+     I.2.3,                                                                                                                                                           
+     I.2.4}                                                     => {Computer Science - Logic in Computer Science}                    0.001145274  0.5652174   7.705103
+181 {D.2.9}                                                     => {J.1}                                                             0.001115908  0.6440678 322.535892
+182 {J.1}                                                       => {D.2.9}                                                           0.001115908  0.5588235 322.535892
+183 {D.2.9}                                                     => {H.4.1}                                                           0.001115908  0.6440678 304.617232
+184 {H.4.1}                                                     => {D.2.9}                                                           0.001115908  0.5277778 304.617232
+185 {J.1}                                                       => {K.6.4}                                                           0.001115908  0.5588235 268.022784
+186 {K.6.4}                                                     => {J.1}                                                             0.001115908  0.5352113 268.022784
+187 {D.2.9,                                                                                                                                                           
+     J.1}                                                       => {H.4.1}                                                           0.001115908  1.0000000 472.958333
+188 {D.2.9,                                                                                                                                                           
+     H.4.1}                                                     => {J.1}                                                             0.001115908  1.0000000 500.779412
+189 {H.4.1,                                                                                                                                                           
+     J.1}                                                       => {D.2.9}                                                           0.001115908  0.9268293 534.937578
+190 {D.2.9,                                                                                                                                                           
+     J.1}                                                       => {K.6.4}                                                           0.001115908  1.0000000 479.619718
+191 {D.2.9,                                                                                                                                                           
+     K.6.4}                                                     => {J.1}                                                             0.001115908  0.9743590 487.938914
+192 {J.1,                                                                                                                                                             
+     K.6.4}                                                     => {D.2.9}                                                           0.001115908  1.0000000 577.169492
+193 {D.2.9,                                                                                                                                                           
+     H.4.1}                                                     => {K.6.4}                                                           0.001115908  1.0000000 479.619718
+194 {D.2.9,                                                                                                                                                           
+     K.6.4}                                                     => {H.4.1}                                                           0.001115908  0.9743590 460.831197
+195 {H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {D.2.9}                                                           0.001115908  0.5757576 332.309707
+196 {H.4.1,                                                                                                                                                           
+     J.1}                                                       => {K.6.4}                                                           0.001115908  0.9268293 444.525593
+197 {J.1,                                                                                                                                                             
+     K.6.4}                                                     => {H.4.1}                                                           0.001115908  1.0000000 472.958333
+198 {H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {J.1}                                                             0.001115908  0.5757576 288.327540
+199 {F.1.2,                                                                                                                                                           
+     F.1.3}                                                     => {Computer Science - Computational Complexity}                     0.001115908  0.8444444  12.394770
+200 {Computer Science - Computational Complexity,                                                                                                                     
+     F.1.2}                                                     => {F.1.3}                                                           0.001115908  0.5937500  74.608741
+201 {C.2.4,                                                                                                                                                           
+     Computer Science - Networking and Internet Architecture}   => {Computer Science - Distributed, Parallel, and Cluster Computing} 0.001115908  0.5937500  11.640166
+202 {F.1.1,                                                                                                                                                           
+     F.1.3}                                                     => {Computer Science - Computational Complexity}                     0.001115908  0.7169811  10.523861
+203 {Mathematics - Combinatorics,                                                                                                                                     
+     Mathematics - Probability}                                 => {Computer Science - Discrete Mathematics}                         0.001115908  0.5428571   8.033861
+204 {D.2.9,                                                                                                                                                           
+     H.4.1,                                                                                                                                                           
+     J.1}                                                       => {K.6.4}                                                           0.001115908  1.0000000 479.619718
+205 {D.2.9,                                                                                                                                                           
+     J.1,                                                                                                                                                             
+     K.6.4}                                                     => {H.4.1}                                                           0.001115908  1.0000000 472.958333
+206 {D.2.9,                                                                                                                                                           
+     H.4.1,                                                                                                                                                           
+     K.6.4}                                                     => {J.1}                                                             0.001115908  1.0000000 500.779412
+207 {H.4.1,                                                                                                                                                           
+     J.1,                                                                                                                                                             
+     K.6.4}                                                     => {D.2.9}                                                           0.001115908  1.0000000 577.169492
+208 {I.4.8}                                                     => {Computer Science - Computer Vision and Pattern Recognition}      0.001086542  0.7254902  23.985551
+209 {D.2.1}                                                     => {Computer Science - Software Engineering}                         0.001086542  0.6065574  20.531907
+210 {F.3.2,                                                                                                                                                           
+     F.4.1}                                                     => {Computer Science - Programming Languages}                        0.001086542  0.6607143  21.530434
+211 {I.5}                                                       => {Computer Science - Computer Vision and Pattern Recognition}      0.001057176  0.5538462  18.310799
+212 {I.5}                                                       => {Computer Science - Artificial Intelligence}                      0.001057176  0.5538462   6.193801
+213 {Computer Science - Logic in Computer Science,                                                                                                                    
+     D.3.1}                                                     => {Computer Science - Programming Languages}                        0.001057176  0.5070423  16.522785
+214 {Computer Science - Systems and Control,                                                                                                                          
+     Mathematics - Probability}                                 => {Mathematics - Optimization and Control}                          0.001057176  0.9729730  37.909209
+215 {Mathematics - Optimization and Control,                                                                                                                          
+     Mathematics - Probability}                                 => {Computer Science - Systems and Control}                          0.001057176  0.5806452  35.057996
+216 {Computer Science - Information Theory,                                                                                                                           
+     Computer Science - Systems and Control}                    => {Mathematics - Optimization and Control}                          0.001057176  0.8000000  31.169794
+217 {C.1.4}                                                     => {Computer Science - Distributed, Parallel, and Cluster Computing} 0.001027810  0.8139535  15.957143
+218 {F.3.1,                                                                                                                                                           
+     F.3.2}                                                     => {Computer Science - Logic in Computer Science}                    0.001027810  0.7777778  10.602749
