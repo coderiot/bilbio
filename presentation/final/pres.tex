@@ -1,0 +1,179 @@
+\documentclass[12pt, xcolor=table]{beamer}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{color}
+
+\usepackage[percent]{overpic}
+\usepackage[footnotesize, bf]{caption}
+\input{theme.tex}
+\input{syntax}
+\renewcommand{\footnotesize}{\tiny}
+\begin{document}
+\title{Algorithmen und Analyse auf bibliographischen Daten}   
+\author{peterr und Lusy} 
+\date{\today} 
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Verteilung der Themen}
+	\begin{center}
+		\includegraphics[scale=0.35]{../../visual/treeParent2.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Verteilung der Themen in Computer Science}
+	\begin{center}
+		\includegraphics[scale=0.25]{../../visual/csFrequent_filter_acm_and_msc.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Entwicklung über die Zeit}
+\end{frame}
+\begin{frame}
+	\frametitle{Interpretation der Ergebnisse}
+\end{frame}
+\begin{frame}
+	\frametitle{Umgang mit den Klassifikationen}
+\end{frame}
+\begin{frame}
+	\frametitle{Nutzen der verschiedenen Klassifikationen}
+\end{frame}
+%\begin{frame}
+	%\frametitle{Eigenschaften des Datensatzes}
+	%\begin{itemize}
+		%\item  enthält ca. $706\,000$ Einträge 
+		%\item  mit 19 verschiedenen Themengebieten 
+		%\item  nur der Themenbereich Physik wird in Themengruppen unterteilt
+		%\item  11 Einträge ohne Informationen
+		%\item  Publikationen haben im Durchschnitt 1.3 und maximal 9 Themen
+	%\end{itemize} 
+%\end{frame}
+%\begin{frame}[fragile]
+	%\frametitle{Aufbau des Datensatzes}
+	%\begin{block}{Header}
+		%\include{header}
+	%\end{block}
+	%\begin{block}{Metadaten}
+		%\include{metadata}
+	%\end{block}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Parsen der Daten}
+	%\begin{itemize}
+		%\item  Parser in Python geschrieben 
+		%\item  kompletter Datensatz in den Speicher
+			%\begin{itemize}
+				%\item Overhead des XML-Parser nicht beachtet
+			%\end{itemize}
+		%\item iterativer Ansatz \footnote{http://www.ibm.com/developerworks/xml/library/x-hiperfparse/}
+		%\item benötigt ca. 70 Sekunden für 1.2 GB
+	%\end{itemize}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Verteilung der Themen}
+	%\begin{center}
+		%\includegraphics[scale=0.35]{../../visual/treeParent.png}
+	%\end{center}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Aufschlüsselung von physics}
+	%\begin{center}
+		%\includegraphics[scale=0.45]{../../visual/setSpecFreq.png}
+	%\end{center}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Häufigkeit von Themen pro Publikation}
+	%\begin{columns}
+		%\column{.5\textwidth}
+    %\includegraphics[scale=0.35]{../../visual/piechart.png}
+		%\column{.5\textwidth}
+    %\includegraphics[scale=0.25]{../../visual/pieSubplot.png}
+	%\end{columns}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Was sind Assoziationsregeln?}
+	%\begin{itemize}
+		%\item bestimmen Korrelation des Auftretes von Mengen
+		%\item Regel der Form "Wenn Menge A, dann Menge B"
+		%\item Kenngrößen
+		%\begin{itemize}
+			%\item Support - relative Häufigkeit der Menge in den Daten
+			 %\item Konfidenz - Häufikeit des gemeinsames Auftretens von A und B, unter der Bedingung das A auftritt
+			 %\item Lift - Bedeutung der Regel
+	%\end{itemize}
+	%\end{itemize}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Assoziationsregeln - aller Themen}
+	%\begin{center}
+	%\begin{table}
+	%\rowcolors[]{1}{blue!20}{blue!10}
+	%\begin{tabular}{rccc}
+		%\tiny\textbf{Regel} &\tiny \textbf{Support} &\tiny \textbf{Konfidenz} & \tiny \textbf{Lift}\\
+		%\hline
+		%\tiny math $\implies$ stat & \tiny 0.6\% &\tiny 64\% &\tiny 3.0  \\
+		%\tiny physics:math-ph $\implies$ math &\tiny 3.8 \% &\tiny 100\% &\tiny 4.7 \\
+		%\tiny physics:hep-th, physics:math-ph  $\implies$ math &\tiny 0.9 \% &\tiny 100\% &\tiny 4.7 \\
+		%\tiny math, physics:hep-th  $\implies$ physics:math-ph  &\tiny 0.9 \% &\tiny 63\% &\tiny 16.3 \\
+		%\tiny physics:gr-qc, physics:hep-th $\implies$ physics:hep-th &\tiny 0.6 \% &\tiny 72 \% &\tiny 6.1 \\
+		%\tiny physics:gr-qc, physics:hep-th $\implies$ physics:astro-ph &\tiny 0.6 \% &\tiny 70 \% &\tiny 3.5 \\
+		%\tiny physics:gr-qc, physics:astro-ph $\implies$ physics:hep-th &\tiny 0.9 \% &\tiny 50 \%  &\tiny 4.3 \\
+		%\tiny physics:astro-ph, physics:hep-th $\implies$ physics:gr-qc  &\tiny 0.9 \% &\tiny 74 \% &\tiny 12.4 \\
+	%\end{tabular}
+	 %\caption*{Support: 0.5 \% und Konfidenz 50 \%}
+	%\end{table}
+	%\end{center}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Assoziationsregeln - Oberthemen}
+	%\begin{center}
+	%\begin{table}
+	%\rowcolors[]{1}{blue!20}{blue!10}
+	%\begin{tabular}{rccc}
+		%\tiny\textbf{Regel} &\tiny \textbf{Support} &\tiny \textbf{Konfidenz} & \tiny \textbf{Lift}\\
+		%\hline
+		%\tiny  $\emptyset \implies$ physics & \tiny 78\% &\tiny 78\% &\tiny 1.0  \\
+		%\tiny stat $\implies$ math  &\tiny 0.6 \% &\tiny 63 \% &\tiny 3.0 \\
+		%\tiny nlin $\implies$ physics  &\tiny 1.3 \% &\tiny 50 \% &\tiny 0.64 \\
+		%\tiny math, nlin $\implies$ physics  &\tiny 0.4 \% &\tiny 83 \% &\tiny 1.1 \\
+	%\end{tabular}
+	 %\caption*{Support: 0.1 \% und Konfidenz 50 \%}
+	%\end{table}
+	%\end{center}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Probleme}
+	%\begin{itemize}
+		%\item mehrere Datumsangaben
+		%\item Themen in Metadaten nicht eindeutig
+		%\begin{itemize}
+			%\item unterschiedliche Kategorisierungen
+			%\item auch in einem Eintrag
+		%\end{itemize}
+		%\item Themenbereiche nachzuschlagen ist aufwendig
+	%\end{itemize}
+%\end{frame}
+%\begin{frame}
+	%\frametitle{Weitere Analysen}
+	%\begin{itemize}
+		%\item Aufschlüsselung der Themenbereiche
+		%\item Regeln für die Unterthemen
+		%\item Algorithmus implementieren?
+			%\begin{itemize}
+				%\item AIS-Algorithmnus
+				%\item Apriori-Algorithmus 
+				%\item FPGrowth 
+			%\end{itemize}
+		%\item Entwicklung in Abhängigkeit von der Zeit
+	%\end{itemize}
+%\end{frame}
+\end{document}
