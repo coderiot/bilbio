@@ -7,3 +7,6 @@
 png("plot.png")
 plot(x,y)
 dev.off()
+
+# Plotten der Itemhäufigkeit
+> itemFrequencyPlot(data, support = 0.025, cex.names=0.9)
