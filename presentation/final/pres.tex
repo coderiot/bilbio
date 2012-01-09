@@ -41,6 +41,15 @@
 		\includegraphics[scale=0.35]{../../visual/treeParent2.png}
 	\end{center}
 \end{frame}
+\begin{frame}[fragile]
+	\frametitle{Aufbau des Datensatzes}
+	\begin{block}{Header}
+		\include{../header}
+	\end{block}
+	\begin{block}{Metadaten}
+		\include{../metadata}
+	\end{block}
+\end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Verteilung der Themen in Computer Science}
@@ -69,22 +78,44 @@
 	\frametitle{Interpretation der Ergebnisse}
     \begin{block}{Assoziationsregeln - Kenngrößen}
     \begin{center}
-        \begin{itemize}
-			\item Support - relative Häufigkeit der Menge in den Daten
-			\item Konfidenz - Häufikeit des gemeinsames Auftretens von A und B, unter der Bedingung das A auftritt
-			\item Lift - Bedeutung der Regel
-	    \end{itemize}
+        \begin{description}
+			\item [Support  ] \hfill \\
+                relative Häufigkeit der Menge in den Daten\\
+                $supp = \frac{\# gemeinsames Vorkommen Bestimmten Subjects}{\# alle Paper Im Datensatz}$\\
+			\item [Konfidenz ] \hfill \\
+                Häufigkeit des gemeinsamen Auftretens von X und Y, unter der Bedingung, dass X auftritt\\
+                $conf(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X)} $\\
+
+			\item [Lift ] \hfill \\
+                Bedeutung der Regel\\
+                $lift(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(Y)\times supp(X)} $\\
+	    \end{description}
     \end{center}
     \end{block}
 \end{frame}
-\begin{frame}
+\begin{frame}[fragile]
     \frametitle{Interpretation der Ergebnisse}
     \begin{block}{Arules für supp=0.01}
-        \begin{itemize}
-            \item Show rules - results from R
-            \item Visualize - choose an apropriate diagramm
-        \end{itemize}
-    \end{block}
+    	\include{cs_arules}
+	\end{block}
+    {\footnotesize
+        F. - Theory of Computation\\
+        F.4. - Mathematical Logic and Formal Languages\\
+        F.4.1. - Mathematical Logic\\
+        I. - Computing Methodologies\\
+        I.2. - Artificial Intelligence\\
+        I.2.7. - Natural Language Processing\\
+    }
+    %\begin{itemize}
+            %\item Show rules - results from R
+            %\item Visualize - choose an apropriate diagramm
+    %\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Arules für supp=0.01}
+	\begin{center}
+		\includegraphics[scale=0.5]{../../visual/plot_matrix_grouped_7rules.png}
+	\end{center}
 \end{frame}
 \begin{frame}
     \frametitle{Interpretation der Ergebnisse}
