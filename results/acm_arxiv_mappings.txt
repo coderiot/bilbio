@@ -1,3 +1,4 @@
+    lhs                                                            rhs                                                                   support confidence       lift
 59  {G.4}                                                       => {Computer Science - Mathematical Software}                        0.001145274  0.5064935  67.373529
 64  {K.4.m Miscellaneous}                                       => {Computer Science - Computers and Society}                        0.002055619  0.9589041  53.442818
 66  {I.2.9}                                                     => {Computer Science - Robotics}                                     0.001380201  0.7460317  52.058646
