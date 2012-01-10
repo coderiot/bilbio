@@ -16,6 +16,6 @@ if (args[1] == "csmath") {
 	levs <- levels(data$Subject)
 	data$Subject <- factor(data$Subject, levels = c(levs[1], levs[2], levs[3]))
 }
-png(paste(args[1],"2.png"), 1280, 800)
+png(paste(args[1],".png", sep=""), 1280, 800, res=110)
 ggplot(data, aes(Year,Frequency,colour = Subject)) +  geom_area(aes(colour = Subject, fill= Subject), alpha=1, position = 'identity') + opts(panel.background = theme_rect(fill = 'white'))
 dev.off()
