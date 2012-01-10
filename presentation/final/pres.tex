@@ -44,10 +44,10 @@
 \begin{frame}[fragile]
 	\frametitle{Aufbau des Datensatzes}
 	\begin{block}{Header}
-		%\include{../header}
+		\include{header}
 	\end{block}
 	\begin{block}{Metadaten}
-		%\include{../metadata}
+		\include{metadata}
 	\end{block}
 \end{frame}
 
@@ -133,14 +133,24 @@
 	\end{center}
 \end{frame}
 \begin{frame}
-    \frametitle{Interpretation der Ergebnisse}
-    \begin{block}{Arules für supp=0.001}
-        \begin{itemize}
-           \item Same as above
-           \item Arules sorted according to supp, conf, lift
-        \end{itemize}
-    \end{block}
+    \frametitle{Arules für supp=0.001, Top 10 Lift}
+    \include{head_sorted_218_arules_by_lift}
 \end{frame}
+\begin{frame}
+    \frametitle{Arules für supp=0.001, Top 10 Support}
+    \include{head_sorted_218_arules_by_support}
+\end{frame}
+\begin{frame}
+    \frametitle{Arules für supp=0.001, Top 10 Confidence}
+    \include{head_sorted_218_arules_by_confidence}
+\end{frame}
+\begin{frame}
+    \frametitle{Arules für supp=0.001}
+    \begin{center}
+		\includegraphics[scale=0.5]{../../visual/graph_218rules.png}
+	\end{center}
+\end{frame}
+
 
 \begin{frame}
 	\frametitle{Mappings zwischen Klassifikationen}
