@@ -1,0 +1,26 @@
+lhs                                                            rhs                                                      support confidence      lift
+1  {Mathematics - Dynamical Systems, Mathematics - Optimization and Control}                    => {Computer Science - Systems and Control}             0.001175468  0.8333333 50.279255
+2  {Computer Science - Systems and Control, Mathematics - Probability}                                 => {Mathematics - Optimization and Control}             0.001057921  0.9729730 37.882491
+3  {Computer Science - Computational Complexity, Condensed Matter - Disordered Systems and Neural Networks} => {Condensed Matter - Statistical Mechanics}           0.001351788  0.6301370 37.487642
+4  {Mathematics - Commutative Algebra}                         => {Computer Science - Symbolic Computation}            0.001322401  0.5555556 37.287968
+5  {Computer Science - Systems and Control, Mathematics - Dynamical Systems}                           => {Mathematics - Optimization and Control}             0.001175468  0.9523810 37.080745
+6  {Mathematics - Optimization and Control, Mathematics - Probability}                                 => {Computer Science - Systems and Control}             0.001057921  0.5714286 34.477204
+7  {Computer Science - Systems and Control}                    => {Mathematics - Optimization and Control}             0.014517030  0.8758865 34.102451
+8  {Mathematics - Optimization and Control}                    => {Computer Science - Systems and Control}             0.014517030  0.5652174 34.102451
+9  {Mathematics - Numerical Analysis}                          => {Computer Science - Numerical Analysis}              0.004672485  0.5317726 33.887058
+10 {Computer Science - Information Theory, Computer Science - Systems and Control}                    => {Mathematics - Optimization and Control}             0.001057921  0.8000000 31.147826
+11 {Computer Science - Social and Information Networks, Condensed Matter - Statistical Mechanics}                  => {Physics - Physics and Society}                      0.003203150  0.9909091 30.794197
+12 {Computer Science - Social and Information Networks, Physics - Data Analysis, Statistics and Probability}       => {Physics - Physics and Society}                      0.002233389  0.9620253 29.896584
+13 {Computer Science - Social and Information Networks, Condensed Matter - Disordered Systems and Neural Networks} => {Physics - Physics and Society}                      0.001234241  0.9333333 29.004932
+14 {Condensed Matter - Statistical Mechanics, Physics - Physics and Society}                             => {Computer Science - Social and Information Networks} 0.003203150  0.5736842 27.690638
+15 {Physics - Data Analysis, Statistics and Probability, Physics - Physics and Society}                             => {Computer Science - Social and Information Networks} 0.002233389  0.5588235 26.973342
+16 {Computer Science - Social and Information Networks}        => {Physics - Physics and Society}                      0.017014899  0.8212766 25.522577
+17 {Physics - Physics and Society}                             => {Computer Science - Social and Information Networks} 0.017014899  0.5287671 25.522577
+18 {Condensed Matter - Disordered Systems and Neural Networks, Physics - Physics and Society}                             => {Computer Science - Social and Information Networks} 0.001234241  0.5185185 25.027896
+19 {Statistics - Machine Learning}                             => {Computer Science - Learning}                        0.005642246  0.5393258 12.727267
+20 {Mathematics - Logic}                                       => {Computer Science - Logic in Computer Science}       0.006259367  0.7717391 10.513015
+21 {Mathematics - Category Theory}                             => {Computer Science - Logic in Computer Science}       0.002057069  0.7142857  9.730356
+22 {Computer Science - Computational Complexity, Mathematics - Logic}                                       => {Computer Science - Logic in Computer Science}       0.001293015  0.6197183  8.442111
+23 {Mathematics - Combinatorics, Mathematics - Probability}                                 => {Computer Science - Discrete Mathematics}            0.001116695  0.5428571  8.028199
+24 {Mathematics - Combinatorics}                               => {Computer Science - Discrete Mathematics}            0.017103059  0.5364055  7.932787
+25 {Mathematics - Statistics Theory}                           => {Computer Science - Information Theory}              0.005083899  0.5423197  2.776798
