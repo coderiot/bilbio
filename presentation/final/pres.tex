@@ -50,12 +50,14 @@
 		\include{metadata}
 	\end{block}
 \end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Verteilung der Themen in Computer Science}
-    \begin{block}{Subjects in CS: Summary}
-    	\include{summary_cs_subjects}
-	\end{block}
+\begin{frame} [fragile]
+	\frametitle{Eigenschaften des CS-Anteils}
+	 {\small
+     enthält ca. $34\,000$ Einträge\\
+    }
+    %\begin{block}
+     \include{summary_cs_subjects}
+	%\end{block}
 \end{frame}
 
 \begin{frame}
@@ -72,26 +74,7 @@
 	\end{center}
 \end{frame}
 \begin{frame}
-	\frametitle{Entwicklung über die Zeit 1}
-	\begin{center}
-		\includegraphics[scale=0.4]{../../visual/trend/csmath.png}
-	\end{center}
-\end{frame}
-\begin{frame}
-	\frametitle{Entwicklung über die Zeit 2}
-	\begin{center}
-		\includegraphics[scale=0.4]{../../visual/trend/csph.png}
-	\end{center}
-\end{frame}
-\begin{frame}
-	\frametitle{Entwicklung über die Zeit 3}
-	\begin{center}
-		\includegraphics[scale=0.4]{../../visual/trend/combcs.png}
-	\end{center}
-\end{frame}
-\begin{frame}
 	\frametitle{Interpretation der Ergebnisse}
-    %\begin{block}{Assoziationsregeln - Kenngrößen}
     \begin{center}
         \begin{description}
 			\item [Support  ] \hfill \\
@@ -106,7 +89,6 @@
                 $lift(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(Y)\times supp(X)} $\\
 	    \end{description}
     \end{center}
-    %\end{block}
 \end{frame}
 \begin{frame}[fragile]
     \frametitle{Interpretation der Ergebnisse}
@@ -121,10 +103,6 @@
         I.2. - Artificial Intelligence\\
         I.2.7. - Natural Language Processing\\
     }
-    %\begin{itemize}
-            %\item Show rules - results from R
-            %\item Visualize - choose an apropriate diagramm
-    %\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Arules für supp=0.01}
@@ -148,6 +126,24 @@
     \frametitle{Arules für supp=0.001}
     \begin{center}
 		\includegraphics[scale=0.5]{../../visual/graph_218rules.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Entwicklung über die Zeit 1}
+	\begin{center}
+		\includegraphics[scale=0.4]{../../visual/trend/csmath.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Entwicklung über die Zeit 2}
+	\begin{center}
+		\includegraphics[scale=0.4]{../../visual/trend/csph.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Entwicklung über die Zeit 3}
+	\begin{center}
+		\includegraphics[scale=0.4]{../../visual/trend/combcs.png}
 	\end{center}
 \end{frame}
 
@@ -176,19 +172,22 @@
 	\item nur ein Subject auf jeder Seite
 	\item Mappings nur von ACM nach Arxiv möglich
 	\item Konflikte, durch Mappings von gleichen ACM-Klassen
-	\item ab einen Schwellwert für den Lift werden die Mappings zu ungenau 
+	\item ab einen Schwellwert für den Lift werden die Mappings zu ungenau
     \end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Anwendung für Mappings}
     \begin{itemize}
-	\item automatische Anpassung von ACM-Klassifikation 
+	\item automatische Anpassung von ACM-Klassifikation
 	\item Reduzierung von Subjects pro Paper für Analyse
-	\item recommendation 
+	\item recommendation
     \end{itemize}
 \end{frame}
-\begin{frame}
-	\frametitle{Nutzen der verschiedenen Klassifikationen}
-    Welche Regeln bleiben übrig, wenn ohne ACM Subjects?\\
+\begin{frame}[fragile]
+    \frametitle{Nutzen der verschiedenen Klassifikationen}
+     Welche Regeln bleiben übrig, wenn ohne ACM Subjects?\\
+    \begin{block}{Arules für supp=0.001}
+    	\include{arules_sup0001_without_acm_msc_by_lift}
+	\end{block}
 \end{frame}
 \end{document}
