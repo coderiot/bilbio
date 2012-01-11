@@ -140,9 +140,10 @@ def get_parent_cs(record):
             if s != None:
                 if msc.search(s):
                     s = 'MSC'
-                if acm.search(s):
+                elif acm.search(s):
                     s = 'ACM'
-                result.append(s)
+                else:
+                    result.append(s)
 
         if result != None:
             print ';'.join(list(set(result)))
@@ -189,7 +190,7 @@ def main(args):
     p = ArxivParser(args[0])
 
     # Return all record in CS
-    get_cs_subjects_with_date(p)
+    get_subjects_cs(p)
 
     #for r in result:
        #print ','.join(r)
