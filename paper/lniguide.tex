@@ -1,0 +1,270 @@
+\documentclass{lni}
+
+\IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
+
+\usepackage{graphicx}
+
+\author{Robert Tolksdorf\\\\mail@robert-tolksdorf.de}
+\title{Die LNI Dokumentenklasse für \LaTeX}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Die \LaTeX-Klasse \texttt{lni} setzt die Layout-Vorgaben für Beiträge
+in LNI Konferenzbänden um. Dieses Dokument beschreibt ihre Verwendung
+und ist bei Beispiel für die entsprechende Darstellung.
+\end{abstract}
+
+Die GI gibt unter \texttt{http://www.gi-ev.de/LNI} Vorgaben für die
+Formatierung von Dokumenten in der LNI Reihe. Für \LaTeX-Dokumente
+(\cite{IB-A95005}) werden diese durch die Dokumentenklasse
+\texttt{lni} realisiert. Dieses Dokument beschreibt die Klasse in der
+Version 0.4.
+
+\section{Verwendung}
+
+Die Dokumentenklasse wird wie üblich durch Verwendung im
+Dokumentenkopf eingebunden:
+
+\begin{verbatim}
+\documentclass{lni}
+\end{verbatim}
+
+Die Klasse beruht auf der normalen \texttt{article}-Klasse und
+verlangt zusätzlich das Vorhandensein der Schriftart Times-Roman und
+deren Einbindung über den Stil \texttt{times} sowie den
+\texttt{verbatim}-Styles. Diese sind mit praktisch allen
+\LaTeX-Installationen erhältlich, ebenso sind die entsprechenden
+Zeichensätze frei erhältlich.
+
+Mögliche Dokumentenoptionen sind:
+
+\begin{itemize}
+\item \texttt{forInclusion}: Bei der Anlieferung von LNI-formatierten
+  Beiträgen kann es -- je nach Herstellungsart des Tagungsbands -- zu
+  Problemen mit der Ausrichtung des Satzspiegels kommen. In diesem
+  Fall sollte die Option gesetzt werden und das daras entstehenden pdf
+  angeliefert werden.\footnote{Dank an Matthias Rust
+    (mrust@rostock.zgdv.de) für den entsprechenden Hinweis und den
+    Code}
+  
+\item \texttt{english}: Für Auswahl der Sprache, siehe
+  Abschnitt~\ref{sprache}.
+
+\end{itemize}
+
+\section{Benutzung}
+
+Die Klasse führt keine zusätzlichen \LaTeX-Makros ein. Ein LNI-Betrag
+sollte sich auf die für die Klasse \texttt{article} definierten Makros
+stützen und wo immer möglich auf die Standardmakros bauen. Eigene
+Makros sollten zusätzlich in externen \texttt{.sty}-Dateien definiert
+werden, um das spätere Zusammenstellen von Beiträgen einer Konferenz
+zu erleichtern.
+
+\subsection{Sprache der Dokumente}
+\label{sprache}
+
+Die Dokumentenklasse trifft Vorkehrungen für deutsch- und
+englischsprachige Dokumente. Dabei ist für den Normalfall deutsch als
+Dokumentensprache vorgesehen. Soll ein Dokument komplett in englischer
+Sprache gesetzt werden, muss die Dokumentenoption \texttt{english}
+verwendet werden.
+
+Zum Umschalten innerhalb des Textes oder am Anfang des Dokuments wird
+wie gewohnt mit \verb|\selectlanguage| aus dem Babel-Paket gearbeitet.
+Diese Paket lädt die \texttt{lni}-Klasse vor -- es braucht also nicht
+normals geladen werden.
+
+\texttt{lni} verwendet für die deutsche Sprache die Trennmuster nach
+der neuen Rechtschreibung. Das entsprechende Sprachkürzel dafür lautet
+\texttt{ngerman} (und nicht \texttt{german}). Falls Ihr \LaTeX\ diese
+Trennmuster noch nicht unterstützt, müssen Sie Ihre System
+entsprechend anpassen (siehe \texttt{www.dante.de}).
+
+Um beispielsweise ein Dokument komplett in Englisch zu setzen, sollte
+im Dokument mit
+
+\begin{verbatim}
+\documentclass[english]{lni}
+\end{verbatim}
+
+beginnen. Dadurch werden die Trennmuster und verschiedene feste
+Textbestandteile geändert (z.B.\ "`Literaturverzeichnis"' in
+"`References"'). 
+
+Die 
+
+
+Eventuell weitere notwendige sprachspezifische Zusatzklassen müssen
+allerdins manuell genutzt werden. Dieses Dokument verwendet
+beispielsweise:
+
+\begin{verbatim}
+\usepackage{latin1}
+\end{verbatim}
+
+\subsection{Titelei}
+
+Der Beitragstitel wird wir üblich in \verb|\title|
+vermerkt. Autorenangaben sind in \verb|\author| definiert. Der Titel
+selber wird wie üblich durch \verb|\maketitle| gesetzt. Angaben über
+den Autoren (Einrichtung, Mailadmüssen innerhalb von \verb|\author|
+vermerkt 
+Dieses Dokument verwendet folgende Zeilen zum Setzen der
+Dokumenteninformationen:
+
+\begin{verbatim}
+\author{Robert Tolksdorf\\\\
+        mail@robert-tolksdorf.de}
+\title{Die LNI Dokumentenklasse für \LaTeX}
+\begin{document}
+\maketitle
+\end{verbatim}
+
+
+\subsection{Textstrukturen}
+
+Verschiedene Parameter für Textstrukturen werden in der
+\texttt{lni}-Klasse umdefiniert. Damit diese Einstellung wirksam sind,
+müssen die Dokumente teilweise genau die entsprechenden Makros
+verwenden.
+
+\subsubsection{Formeln}
+
+Die korrekte Einrückung und Numerierung für Formeln ist bei den
+Umgebungen \texttt{equation} und \texttt{eqnarray} gewährleistet.
+
+%\newpage
+\begin{verbatim}
+\begin{equation}
+  1=4-3
+\end{equation}
+
+\begin{eqnarray}
+  2=7-5\\
+  3=2-1
+\end{eqnarray}
+\end{verbatim}
+
+ergibt
+\begin{equation}
+  1=4-3
+\end{equation}
+
+und
+
+\begin{eqnarray}
+  2=7-5\\
+  3=2-1
+\end{eqnarray}
+
+
+\subsubsection{Programmauszüge}
+
+Die LNI Formatvorlage verlangt die Einrückung von Listings vom linken
+Rand. In der \texttt{lni}-Klasse ist dies für die
+\texttt{verbatim}-Umgebung realisiert.
+
+
+\subsubsection{Abbildungen}
+
+Abbildungen werden mit den üblichen \LaTeX-Mitteln erzeugt. Dabei muss
+die Abbildungsunterschrift mit \verb|\caption| nach der Abbildung
+eingefügt werden und Abbildung und -unterschrift mit der
+\texttt{center}-Umgebung umschlossen sein.
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=2cm]{gilogo}
+    \caption{\label{logo}Das Logo der GI}
+  \end{center}
+\end{figure}
+
+Für die Positionierung von Abbildungen sollte \verb|[htb]| gewählt
+werden. Abbildung~\ref{logo} zeigt ein Beispiel, das so erzeugt wurde:
+
+\begin{verbatim}
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=2cm]{gilogo}
+    \caption{\label{logo}Das Logo der GI}
+  \end{center}
+\end{figure}
+\end{verbatim}
+
+Gleiches gilt bei der Verwendung der \texttt{table}-Umgebung. Bislang
+sind keine weiteren Spezialstile für Abbildungen getestet worden
+(beispielsweise \texttt{subfigure}).
+
+\subsubsection{Literaturverzeichnis}
+
+Die \texttt{lni}-Klasse definiert automatisch den
+\texttt{lnig}-Bibliographiestil, eine separate Deklaration mit
+\verb|\bibliographystyle{lni}| ist also überflüssig, aber auch nicht
+schädlich. Wie gewohnt wird das Literaturverzeichnis wir folgt
+eingebunden:
+
+\begin{verbatim}
+\bibliography{lniguide}
+\end{verbatim}
+
+Bei Verwendung der Dokumentenoption \texttt{english} wird der
+englischsprachige Bibliographiestil \texttt{lni} verwendet. Bei
+eventuell wechselnder Sprachlichkeit im Dokument gilt die Sprachwahl,
+die bei Auftreten von \verb|\bibliography| eingestellt ist auch für
+das Literaturverzeichnis.
+
+\section{Installation}
+
+\texttt{lni.cls} und \texttt{lni.bst} müssen für Ihr
+\TeX-System auffindbar sein. Die Klasse benutzt die Pakete
+\texttt{times} und \texttt{verbatim}, die in \LaTeX-Installationen
+normalerweise vorhanden und ansonsten beispielsweise über
+\texttt{www.dante.de} kostenfrei erhältlich sind.
+
+\section{Verarbeitung von Beiträgen in LNI Konferenzbänden}
+
+Die Klasse \texttt{lni} dient der Auszeichnung von einzelnen Beiträgen
+für Workshops, Tagungen etc., die einen LNI-Konferenzband
+herausgeben. Die Verarbeitung der einzelnen Beiträge zu einem
+kompletten Band ist Aufgabe der jeweiligen Herausgeber und wird durch
+eine weitere Klasse \texttt{lniproc} unterstützt.
+
+
+\section{Fragen und Hilfestellung}
+
+Bei auftretenden Fehlern und Ergänzungswünschen zu der
+\texttt{lni}-Klasse wenden Sie sich bitte an den Autoren unter
+\texttt{mail@robert-tolksdorf.de}. \emph{Bitte senden Sie nur Anfragen
+zu \texttt{lni}-spezifischen Problemen und keine \LaTeX-Fragen
+allgemeiner Art.}
+
+
+\bibliography{lniguide}
+
+\section{Änderungen von V0.3 auf V0.4}
+
+\begin{itemize}
+\item Getrennte Bibliographiestile\texttt{lni.bst} und
+  \texttt{lnig.bst} und Dokumentenoption \texttt{english}
+\end{itemize}
+
+
+\section{Änderungen von V0.1 auf V0.3}
+
+\begin{itemize}
+\item Option \texttt{forInclusion}
+\end{itemize}
+
+\section{Änderungen von V0.1 auf V0.2}
+
+\begin{itemize}
+\item Mehrsprachigkeit durch Einbinden von \texttt{english}
+  unterstützt.
+\item Neue deutsche Trennmuster \texttt{ngerman} benutzt.
+\end{itemize}
+\end{document}
+
+
+
