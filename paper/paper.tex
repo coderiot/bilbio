@@ -1,11 +1,20 @@
 \documentclass{lni}
 
-\IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
-
+%\IfFileExists{latin1.sty}{\usepackage{latin1}}{\usepackage{isolatin1}}
+\usepackage[latin1]{inputenc}
+% Verwenden von T1 Fonts
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
 \usepackage{graphicx}
-
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+%\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{color}
+\include{source/syntax}
 \author{
-	Peterr, Lusy \\
+	Peterrr, Lusy \\
 	\\
 	Abteilung \\
 	Einrichtung \\
@@ -14,14 +23,15 @@
 	emaiaddresse@autor1 \\
 	emaiaddresse@autor2
 }
-\title{Titel des Beitrags}
+\title{Auffinden von Assoziationsregeln zwischen Themen in mathematischen Publikationen}
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Es folgt ein kurzer Überblick über die Arbeit. Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text.
+Mit Hilfe der Assoziationsanalyse sollen Beziehungen zwischen Themen von mathematischen Publikationen gefunden werden. Hierfür wird auf den aprior-Algorithmus zurückgegriffen. Der Analyse zugrundeliegende Datensatz waren alle Publikation von arxiv.org mit dem Stand Oktober 2011.\cite{Ez99,ABC01} % TODO nur ein Test, damit die Bilbiographie angezeigt wird
 \end{abstract}
 
+\tableofcontents
 %-------------------------------------------------------
 %----Hauptteil------------------------------------------
 %-------------------------------------------------------
@@ -33,7 +43,7 @@ Es folgt ein kurzer Überblick über die Arbeit. Text Text Text Text Text Text Tex
 \input{5-Anwendung}
 \input{6-Zusammenfassung}
 
-
+\bibliographystyle{lni}
 \bibliography{lnitemplate}
 
 \end{document}
