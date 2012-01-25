@@ -1,11 +1,23 @@
 \section{Der Datensatz}
-Der Datensatz liegt im XML-Format vor und verwendet ein von der Dublin Core Initiative spezifiziertes Schema. 
+arXiv.org ist ein Dokumentenserver für Preprints aus dem Bereich der naturwissenschaftlichen Fächer. 
+Veröffentlichungen können ohne Begutachtung auf dem Server abgelegt werden und werden nach dem Open-Access-Prinzip für
+alle kostenfrei einsehbar.
+
+Der verwendete Datensatz liegt im XML-Format vor und verwendet ein von der Dublin Core Initiative \footnote{http://dublincore.org/} spezifiziertes Schema.
+Jeder Eintrag für eine Publikation wird von einem \PY{n+nt}{<record}\PY{n+nt}{>}-Tag umschlossen und alle Einträge werden in \PY{n+nt}{<ListRecords}\PY{n+nt}{>} aufeführt.
 \input{source/dataset}
 \subsection{Aufbau der Einträge}
-Der Datensatz setzt sich aus zwei Teilen zusammen.\\
+Die Einträge setzen sich aus zwei Teilen zusammen den \PY{n+nt}{<header}\PY{n+nt}{>}- und \PY{n+nt}{<metadata}\PY{n+nt}{>}-Teil.
 \subsubsection{Header}
+Im Header-Teil eines Eintrages sind arXiv-spezifische Informationen zur jeder Publikation.
+Der <identifier> ist ein eindeutiger Bezeichner für eine Publikation in der arXiv Datenbank.
+Das <datestamp> Attribut enthält das Datum der letzten Bearbeitung des Eintrag auf dem arXiv-Server.
+Die <setSpec>-Attribute enthalten die einer von arXiv zugeordneten Themen für eine Publikation.
 \input{source/header}
 \subsubsection{Metadaten}
+In den Metadaten befinden sich alle Informationen zu einer Publikation. Dazu gehören der Titel der Publikation,
+die Autoren, sowie die Themen. Themen werden anhand unterschiedlicher Klassifizierungen vergeben. Einerseits werden 
+arXiv-spezifische Themen vergeben und andererseit Themen, die auf standadisierten Klassifizierungen, zum Beispiel der ACM Klassifizierungi\footnote{http://www.acm.org/about/class/ccs98-html} oder der MSC-Klassifizierung\footnote{http://msc2010.org/mscwiki/index.php?title=MSC2010}, beruhen. Zu jedem Eintrag einer Publikation gehört ein kurzer Abstract, der den Inhalt wider geben soll. Anschließend gibt es ein oder mehrere <date>-Attribute, die das Datum aller Veränderungen an dem Eintrag der Publikation aufzeichnen. Am Ende befinden sich verschiedene eindeutige Bezeichner, um die Publikation in verschiedenen Datenbanken wieder zu finden.
 \input{source/metadata}
-\subsection{Parsen des Datensatzes}
+\subsection{Parsen des Datensatzes?}
 \subsection{Eigenschaften}
