@@ -1,3 +1,35 @@
 \section{Einleitung}
 \subsection{Motivation}
+In Anlehnung an die Warenkorbeanalyse sollen die vergebene Themen für wissenschaftliche Publikationen analysiert werden,
+um so häufig miteinander vergebene Themen und Brückenthemen zwischen Fachgebieten zu ermitteln.
 \subsection{Problemstellung}
+Die Themen zu wissenschaftlichen Publikationen werden anhand der veröffentlichen Publikationen auf arXiv.org beispielhaft untersucht. Das Verfahren, um Beziehungen zwischen Themen zu finden wird die Assoziationsanalyse sein. Durch Assoziationsregeln können 
+\section{Assozationsanalyse}\cite{AIS}% TODO test um unser Startpaper zu zitieren
+Die Assoziationanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen.
+Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Item sind Objekte, die in Transaktionen auftreten
+können. Ein Datensatz zur Assoziationsanalyse besteht, also aus einer Menge von Transaktionen.
+\subsection{Assozationsregeln}
+Assoziationsregeln sind Implikationen der Form $A \rightarrow B$ und beschreiben den Sachverhalt, dass wenn $A$ auftritt auch $B$ auftritt.
+\subsection{Kenngrößen von Assoziationsregeln}
+\subsubsection{Support}
+Der Support bezeichnet die relative Häufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz..
+\begin{mdef}[Support]
+\[
+\mathrm{support}(X) = \frac{\text{Anzahl der vorkommen von X im Datensatz}}{\text{Anzahl aller Transaktionen}}
+\]
+\end{mdef}
+\subsubsection{Konfidenz}
+Die ist relative Häufigkeit der Transaktionen in denen X vorkommt zusammen mit Y.
+\begin{mdef}[Konfidenz]
+\[
+\mathrm{conf}(X\rightarrow Y) = \frac{\mathrm{support}(X \cup Y)}{\mathrm{support}(X)} 
+\]
+\end{mdef}
+\subsubsection{Lift}
+Der Lift wird für die Stärke einer Regeli bzw. Bedeutung herrangezogen. 
+\begin{mdef}[Lift]
+\[
+\mathrm{lift}(X\rightarrow Y) = \frac{ \mathrm{support}(X \cup Y)}{ \mathrm{support}(Y) \cdot \mathrm{support}(X) } 
+\]
+\end{mdef}
+\subsection{apriori-Algorithmus}
