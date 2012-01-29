@@ -47,10 +47,33 @@ Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens eine Support von $\
 	\label{apriori}
 \begin{algorithmic}
 	\STATE $L_1\gets \{\text{alle Items mit } \mathrm{minsupp}\}$
-	\FOR{$k = 2$,$L_{k-1} = \emptyset$, $k++$} 
-		\STATE $L_k \gets \mathrm{apriori-gen}(L_{k-1})$
+	\FOR{$k = 2,\;L_{k-1} = \emptyset,\;k++$} 
+		\STATE $L_k \gets \text{apriori-gen}(L_{k-1})$ \COMMENT{Erzeugung von k-elementigen Kanditatenmengen}
 		\FORALL{$t \in D$} 
-			\STATE $i \gets i + 1$
+		\STATE $\text{erhöhe Zähler aller Kanditatenmengen in } C_k \text{ mit } t$
+		\ENDFOR \\
+		$L_k \gets \text{alle Kanditatenmengen } C_k \text{ mit } \mathrm{minsupp}$
+	\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kanditaten wird Überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$.
+
+\begin{algorithm}
+	\caption{Erzeugung der Kanditatenmengen}
+	\label{apriori-gen}
+\begin{algorithmic}
+	\STATE \COMMENT{Erzeugung von k-elementigen Kanditatenmengen}
+	\STATE $A = \{i_{j_1},\ldots, i_{j_{k-1}}\} \in L_{k-1} \text{ und } B = \{i_{l_1},\ldots, i_{l_{k-1}}\} \in L_{k-1}$
+	\IF{$A \triangle B = \{i_{j_{k-1}}, i_{l_{k-1}}\}$}
+		\STATE $A \cup B \text{wird als Kandidatenmenge zu } C_k \text{ hinzugefügt}$
+	\ENDIF
+	\STATE \COMMENT{Entfernen von Kanditaten, deren (k-1)-elementigen Teilmengen der Obermenge bestehen}
+	\FORALL{$c \in C_k$} 
+		\FORALL{$(k-1)-\text{elementige Teilmengen s von } c$}
+		\IF{$s \notin L_{k-1}$}
+			\STATE $C_k \gets C_k \setminus c$
+		\ENDIF
 		\ENDFOR
 	\ENDFOR
 \end{algorithmic}
