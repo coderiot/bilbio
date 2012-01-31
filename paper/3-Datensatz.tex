@@ -18,6 +18,41 @@ Die <setSpec>-Attribute enthalten die von arXiv zugeordneten Themen für eine Pub
 In den Metadaten befinden sich alle anderen relevanten Informationen zu einer Publikation. Dazu gehören z.B. der Titel der Publikation,
 die Autoren, sowie die Themen. Themen werden anhand unterschiedlicher Klassifizierungen vergeben. Es werden sowohl arXiv-spezifische Themen vergeben als auch Themen, die auf standartisierten Klassifizierungen, zum Beispiel der ACM-Klassifizierung\footnote{http://www.acm.org/about/class/ccs98-html} oder der MSC-Klassifizierung\footnote{http://msc2010.org/mscwiki/index.php?title=MSC2010}, beruhen. Zu jedem Eintrag einer Publikation gehört außerdem ein kurzer Abstract, der den Inhalt kurz erläutern soll. Anschließend gibt es ein oder mehrere <date>-Attribute, die das Datum aller Veränderungen an dem Eintrag der Publikation aufzeichnen. Am Ende befinden sich verschiedene eindeutige Bezeichner, um die Publikation in verschiedenen Datenbanken wieder zu finden.
 \input{source/metadata}
+
 \subsection{Parsen des Datensatzes?}
+
 \subsection{Eigenschaften}
-\subsection{Eigenschaften vom Computer Science Anteil}
+Der Datensatz besteht aus $706\,077$ Einträgen mit wissenschaftlichen Publikationen. Die Publikationen werden im Header-Teil eines Eintrags in 18 Themen eingeteilt. Eine Publikatione kann ein oder mehrere Themen haben. In der nächsten Tabelle ist eine Verteilung der Themen aufgelistet.\\
+\begin{table}[ht]
+\caption{Aufteilung der Themen im  Datensatz} % title of Table
+\centering % used for centering table
+\begin{tabular}{| l | l | l |}
+	\hline
+	Thema & Abkürzung & Anteil(ca.) \\
+	\hline 
+	Mathematics & math & $21.2 \%$ \\
+	Condensed Matter & physics:cond-mat & $20.0 \%$\\
+	Astrophysics & physics:astro-ph & $20.0\%$\\
+	High Energy Physics - Phenomenology & physics:hep-ph & $13.0\%$\\
+	High Energy Physics - Theory & physics:hep-th & $11.7\%$\\
+	Physics & physics:physics & $6.8\%$\\
+	Quantum Physics & physics:quant-ph &$6.3\%$\\
+	General Relativity and Quantum Cosmology & physics:gr-qc & $6.0 \%$\\
+	Computer Science & cs & $4.8 \%$ \\
+	Mathematical Physics & physics:math-ph & $3.9 \%$\\
+	Nuclear Experiment & physics:nucl-th & $3.8\%$\\
+	High Energy Physics - Experiment & physics:hep-ex & $2.7\%$\\
+	Nonlinear Sciences & nlin &  $2.7 \%$\\
+	High Energy Physics - Lattice & physics:hep-lat & $2.1\%$\\
+	Quantitative Biology & q-bio &$1.4 \%$ \\
+	Nuclear Theory & physics:nucl-ex & $1.3\%$\\
+	Statistics & stat & $1.0 \%$ \\
+	Quantitative Finance & q-fin & $0.4\%$ \\
+	Physics & physics & $0.0 \%$\\
+	\hline
+\end{tabular}
+\end{table}
+
+Die durschnittliche Anzahl der vergebenen Themen beträgt $1.3$ und die maximale Anzahl von Themen für eine Publikation ist $9$. Bei rund $80 \%$ aller Publikationen wurde nur $1$ Thema im Kopfbereich eines Eintrages vergeben. Bei $14 \%$ aller Themen wurden 2 und bei den restlichen $6 \%$ mehr als 2 Themen vergeben.
+
+\subsection{Eigenschaften vom Thema Computer Science}
