@@ -1,39 +1,39 @@
 \section{Assozationsanalyse}\cite{Agrawal:1993:MAR:170035.170072}% TODO test um unser Startpaper zu zitieren
-Die Assoziationanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten kÃ¶nnen. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
+Die Assoziationanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
 \subsection{Assozationsregeln}
 Assoziationsregeln sind Implikationen der Form $A \rightarrow B$ und beschreiben den Sachverhalt, dass wenn $A$ auftritt auch $B$ auftritt.
-\subsection{KenngrÃ¶ÃŸen von Assoziationsregeln}
+\subsection{Kenngrößen von Assoziationsregeln}
 \subsubsection{Support}
-Der Support bezeichnet die relative HÃ¤ufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz.
+Der Support bezeichnet die relative Häufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz.
 \begin{mdef}[Support]
 \[
 \mathrm{support}(X) = \frac{\text{Anzahl der vorkommen von X im Datensatz}}{\text{Anzahl aller Transaktionen}}
 \]
 \end{mdef}
 \subsubsection{Konfidenz}
-Die Konfidenz ist die relative HÃ¤ufigkeit der Transaktionen in denen X zusammen mit Y vorkommt. Oder anders formuliert, beschreibt diese, wie oft Y vorkommt, gegeben dass X vorkommt.
+Die Konfidenz ist die relative Häufigkeit der Transaktionen in denen X zusammen mit Y vorkommt. Oder anders formuliert, beschreibt diese, wie oft Y vorkommt, gegeben dass X vorkommt.
 \begin{mdef}[Konfidenz]
 \[
 \mathrm{conf}(X\rightarrow Y) = \frac{\mathrm{support}(X \cup Y)}{\mathrm{support}(X)}
 \]
 \end{mdef}
 \subsubsection{Lift}
-Der Lift wird fÃ¼r die StÃ¤rke einer Regel bzw. deren Bedeutung herrangezogen.
+Der Lift wird für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
 \begin{mdef}[Lift]
 \[
 \mathrm{lift}(X\rightarrow Y) = \frac{ \mathrm{support}(X \cup Y)}{ \mathrm{support}(Y) \cdot \mathrm{support}(X) }
 \]
 \end{mdef}
 \subsection{apriori-Algorithmus}
-Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  verÃ¶ffentlicht, der sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln unterscheidet. \\
-$I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen kÃ¶nnen.
-$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ ein Teilmenge der Menge von Items ist. Weiterhin wird ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Kriterium fÃ¼r die Assoziationsregeln verwendet wird. Der Algorithmus wird in zwei Probleme aufgeteilt.
+Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht, der sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln unterscheidet. \\
+$I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
+$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ ein Teilmenge der Menge von Items ist. Weiterhin wird ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Kriterium für die Assoziationsregeln verwendet wird. Der Algorithmus wird in zwei Probleme aufgeteilt.
 \begin{description}
 	\item[Problem 1] Finden aller Teilmengen von Items in die Transaktionen, die mindestens einen Support von $\mathrm{minsupp}$ haben.
-	\item[Problem 2] Aus den gefundenen Teilmengen in Problem 1 werden Assoziationsregeln erzeugt. Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berÃ¼cksichtigt.
+	\item[Problem 2] Aus den gefundenen Teilmengen in Problem 1 werden Assoziationsregeln erzeugt. Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
 \end{description}
-\subsubsection{Finden von hÃ¤ufigen Mengen}
-Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge mÃ¶glicher Kandidaten fÃ¼r $L_k$. Im ersten Schritt wird die HÃ¤ufigkeit aller Items in den Transaktionen aus $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten fÃ¼r $L-k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ Ã¼bersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
+\subsubsection{Finden von häufigen Mengen}
+Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten für $L-k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
 \begin{algorithm}
 	\caption{apriori Algorithmus}
 	\label{apriori}
@@ -42,14 +42,14 @@ Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $
 	\FOR{$k = 2,\;L_{k-1} = \emptyset,\;k++$}
 		\STATE $L_k \gets \text{apriori-gen}(L_{k-1})$ \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
 		\FORALL{$t \in D$}
-		\STATE $\text{erhÃ¶he ZÃ¤hler aller Kanditatenmengen in } C_k \text{ mit } t$
+		\STATE $\text{erhöhe Zähler aller Kanditatenmengen in } C_k \text{ mit } t$
 		\ENDFOR \\
 		$L_k \gets \text{alle Kanditatenmengen } C_k \text{ mit } \mathrm{minsupp}$
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
 
-Die Erzeugung von $k$-elementigen Kandidatenmengen verlÃ¤uft in zwei Schritten. ZunÃ¤chst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kandidaten wird Ã¼berprÃ¼ft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$.
+Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kandidaten wird überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$.
 
 \begin{algorithm}
 	\caption{Erzeugung der Kandidatenmengen}
@@ -58,7 +58,7 @@ Die Erzeugung von $k$-elementigen Kandidatenmengen verlÃ¤uft in zwei Schritten. 
 	\STATE \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
 	\STATE $A = \{i_{j_1},\ldots, i_{j_{k-1}}\} \in L_{k-1} \text{ und } B = \{i_{l_1},\ldots, i_{l_{k-1}}\} \in L_{k-1}$
 	\IF{$A \triangle B = \{i_{j_{k-1}}, i_{l_{k-1}}\}$}
-		\STATE $A \cup B \text{wird als Kandidatenmenge zu } C_k \text{ hinzugefÃ¼gt}$
+		\STATE $A \cup B \text{wird als Kandidatenmenge zu } C_k \text{ hinzugefügt}$
 	\ENDIF
 	\STATE \COMMENT{Entfernen von Kandidaten, deren (k-1)-elementigen Teilmengen der Obermenge bestehen}
 	\FORALL{$c \in C_k$}
