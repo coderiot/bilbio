@@ -20,18 +20,22 @@ Die <setSpec>-Attribute enthalten die von arXiv zugeordneten Themen für eine Pub
 \input{source/header}
 \caption{Kopfteil eines Eintrage}
 \end{program}
+
 \subsubsection{Metadaten}
-In den Metadaten befinden sich alle anderen relevanten Informationen zu einer Publikation. Dazu gehören z.B. der Titel der Publikation,
-die Autoren, sowie die Themen. Themen werden anhand unterschiedlicher Klassifizierungen vergeben. Es werden sowohl arXiv-spezifische Themen vergeben als auch Themen, die auf standartisierten Klassifizierungen, zum Beispiel der ACM-Klassifizierung\footnote{http://www.acm.org/about/class/ccs98-html} oder der MSC-Klassifizierung\footnote{http://msc2010.org/mscwiki/index.php?title=MSC2010}, beruhen. Zu jedem Eintrag einer Publikation gehört außerdem ein kurzer Abstract, der den Inhalt kurz erläutern soll. Anschließend gibt es ein oder mehrere <date>-Attribute, die das Datum aller Veränderungen an dem Eintrag der Publikation aufzeichnen. Am Ende befinden sich verschiedene eindeutige Bezeichner, um die Publikation in verschiedenen Datenbanken wieder zu finden.
+ In den Metadaten befinden sich alle anderen relevanten Informationen zu einer Publikation. Dazu gehören z.B. der Titel der Publikation, die Autoren, sowie die Themen. Themen werden anhand unterschiedlicher Klassifizierungen vergeben. Es werden sowohl arXiv-spezifische Themen vergeben als auch Themen, die auf standartisierten Klassifizierungen, zum Beispiel der ACM-Klassifizierung\footnote{http://www.acm.org/about/class/ccs98-html} oder der MSC-Klassifizierung\footnote{http://msc2010.org/mscwiki/index.php?title=MSC2010}, beruhen. Zu jedem Eintrag einer Publikation gehört außerdem ein kurzer Abstract, der den Inhalt kurz erläutern soll. Anschließend gibt es ein oder mehrere <date>-Attribute, die das Datum aller Veränderungen an dem Eintrag der Publikation aufzeichnen. Am Ende befinden sich verschiedene eindeutige Bezeichner, um die Publikation in verschiedenen Datenbanken wieder zu finden.
 \begin{program}
 \input{source/metadata}
-\caption{Metadaten eines Eintrage}
+\caption{Metadatenten eines Eintrage}
 \end{program}
-
-\subsection{Parsen des Datensatzes?}
 
 \subsection{Eigenschaften}
 Der Datensatz besteht aus $706\,077$ Einträgen mit wissenschaftlichen Publikationen. Die Publikationen werden im Header-Teil eines Eintrags in 18 Themen(hier Oberthemen genannt) eingeteilt. Eine Publikatione kann ein oder mehrere Themen haben. In der nächsten Tabelle ist eine Verteilung der Themen aufgelistet.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{../visual/treemap_no_title.png}
+	\caption{Verteilung der Oberthemen}
+	\label{treemap}
+\end{figure}
 \begin{table}[H]
 \centering % used for centering table
 \begin{tabular}{| l | l | l |}

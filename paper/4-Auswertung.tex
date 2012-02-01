@@ -1,2 +1,134 @@
 \section{Auswertung der Ergebnisse}
-öäüß
+\subsection{Analyse der Oberthemen}
+\subsubsection{Assoziationsregeln}
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{| r l | l | l | l |}
+		\hline
+		\textbf{Regel}& &\textbf{Support} &\textbf{Konfidenz} & \textbf{Lift}\\
+		\hline
+		\{math\}  $\implies$ & \{stat\} & 0.6\% & 64\% &3.0  \\
+		\{hysics:math-ph\} $\implies$& \{math\} &3.8 \% & 100\% & 4.7 \\
+		\{physics:hep-th, physics:math-ph\}  $\implies$& \{math\} &0.9 \% &100\% &4.7 \\
+		\{math, physics:hep-th\}  $\implies$& \{physics:math-ph\}  &0.9 \% &63\% &16.3 \\
+		\{physics:gr-qc, physics:hep-th\} $\implies$& \{physics:hep-th\} &0.6 \% &72 \% &6.1 \\
+		\{physics:gr-qc, physics:hep-th\} $\implies$& \{physics:astro-ph\} &0.6 \% &70 \% &3.5 \\
+		\{physics:gr-qc, physics:astro-ph\} $\implies$& \{physics:hep-th\} &0.9 \% &50 \%  &4.3 \\
+		\{physics:astro-ph, physics:hep-th\} $\implies$& \{physics:gr-qc\}  &0.9 \% &74 \% &12.4 \\
+		\hline
+\end{tabular}
+\caption{Assoziationsregeln der Oberthemen minsupp=0.5\% und minconf=50\%}
+\end{table}
+
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{|rl|l|l|l|}
+	\hline
+	\textbf{Regel}& &\textbf{Support} &\textbf{Konfidenz} & \textbf{Lift}\\
+	\hline
+	$\{\emptyset\} \implies$ & \{physics\} & 78\% &78\% &1.0  \\
+	\{stat\} $\implies$ & \{math\}  &0.6 \% &63 \% &3.0 \\
+	\{nlin\} $\implies$ & \{physics\}  &1.3 \% &50 \% &0.64 \\
+	\{math, nlin\} $\implies$ & \{physics\}  &0.4 \% &83 \% &1.1 \\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln mit zusammegefassten physics-Themen Support: 0.1 \% und Konfidenz 50 \%}
+\end{table}
+\subsection{Analyse der Themen in den Metadaten}
+\subsubsection{Assoziationsregeln}
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{|rl|l|l|l|}
+	\hline
+	\textbf{Regel}& &\textbf{sup} &section\textbf{conf} &\textbf{lift}\\
+	\hline
+	\small I.2.7 $\implies$ &\small CS - Computation and Language &1.2\% &90 \% &16.9 \\
+	\small CS- Systems and Control $\implies$ &  \small Math - Optimization and Control &1.5\% &88 \% &34 \\
+	\small Math - Optimization and Control $\implies$ & \small CS - Systems and Control  &1.5\% &56 \% &34 \\
+	\small CS - Social and Information Networks $\implies$ & \small Physics - Physicsysics and Society &1.7\% &82 \% &25.5 \\
+	\small Physicsics - Physics and Society $\implies$ & \small CS - Social and Information Networks &1.7\% &52 \% &25.5 \\
+	\small F.4.1 $\implies$ & \small CS - Logic impliesn Computer Science &1.6\% &78 \% &10.6 \\
+	\small Math - Combinatorics $\implies$ & \small CS - Discrete Mathematics  &1.7\% &54 \% &7.9 \\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln der Unterthemen Support: 1 \% und Konfidenz 50 \%}
+\end{table}
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{|rl|l|l|l|}
+	\hline
+	\textbf{Regel}& &\textbf{sup} &section\textbf{conf} &\textbf{lift}\\
+	\hline
+	\{D.2.9, J.1\} $\implies$ & \{H.4.1\} & $0.1\%$ &$ 100 \%$ & $473.0$\\
+	\{D.2.9, H.4.1\} $\implies$ & \{J.1\} & $0.1\%$ & $100 \%$ & $500.8$\\
+	\{D.2.9, J.1\} $\implies$ & \{K.6.4\} & $0.1\%$ & $100 \%$ & $479.6$\\
+	\{J.1, K.6.4\} $\implies$ & \{D.2.9\} & $0.1\%$ & $100 \%$ & $577.2$\\
+	\{D.2.9, H.4.1\} $\implies$ & \{K.6.4\} &$0.1\%$ & $100 \%$ & $479.6$\\
+	\{J.1, K.6.4\} $\implies$ & \{H.4.1\} & $0.1\%$ & $100 \%$ & $473.0$\\
+	\{H.4.1, K.8.1\} $\implies$ & \{K.6.4\} &$ 0.2\%$ & $100 \%$ & $479.6$\\
+	\{K.6.4, K.8.1\} $\implies$ & \{H.4.1\} &$ 0.2\%$ & $100 \%$ & $473.0$\\
+	\{D.2.5,K.8.1\} $\implies$ & \{H.4.1\}  &$ 0.1\%$ & $100 \%$ & $473.0$\\
+	\{D.2.5, H.4.1\} $\implies$ & \{K.8.1\} &$0.1\%$ & $100 \%$ & $567.6$\\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln der Unterthemen sortiert nach Konfidenz mit  Support: 0.1 \% und Konfidenz 50 \%}
+\end{table}
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{|rl|l|l|l|}
+	\hline
+	\textbf{Regel}& &\textbf{sup} &section\textbf{conf} &\textbf{lift}\\
+	\hline
+	\{J.1, K.6.4\} $\implies$ &\{D.2.9\} &0.1\% & 100 \% & 577.2 \\
+	\{H.4.1, J.1, K.6.4\} $\implies$ & \{D.2.9\} &0.1\%& 100\% & 577.2\\
+	\{D.2.5, H.4.1\} $\implies$ & \{K.8.1\} &0.1\%& 100\% & 567.6\\
+	\{D.2.5, K.6.4\} $\implies$ & \{K.8.1\} &0.1\%& 100\% & 567.6\\
+	\{D.2.5, H.4.1, K.6.4\} $\implies$ & \{K.8.1\} &0.1\%& 100 \% & 567.6\\
+	\{H.4.1, J.1\} $\implies$ & \{D.2.9\} &0.1\%& 92.7 \% & 534.9\\
+	\{D.2.9, H.4.1\} $\implies$ & \{J.1\} &0.1\%& 100 \% & 500.8\\
+	\{D.2.9, H.4.1, K.6.4\} $\implies$ & \{J.1\} &0.1\%& 100\% & 500.8\\
+	\{D.2.9, K.6.4\} $\implies$ & \{J.1\} &0.1\%& 97.4\% & 487.9\\
+	\{D.2.9, J.1\} $\implies$ & \{K.6.4\} &0.1\%& 100\% & 479.6\\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln der Unterthemen sortiert nach Lift mit  Support: 0.1 \% und Konfidenz 50 \%}
+\end{table}
+\begin{table}[H]
+\begin{tabular}{|rl|l|l|l|}
+	\hline
+	\textbf{Regel} & &\textbf{sup} &\textbf{conf} &\textbf{lift}\\
+	\hline
+	\small Math - Combinatoricscs $\implies$ & \small CS - Discrete Mathematics  &1.7\% &54 \% &7.9 \\
+	\small CS - Social and Information Networks $\implies$ & \small Physics - Physicscs and Society &1.7\% &82 \% &25.5 \\
+	\small Physics - Physics and Society $\implies$ & \small CS - Social and Information Networks &1.7\% &52 \% &25.5 \\
+	\small F.4.1 $\implies$ & \small CS - Logic in CSomputer Science &1.6\% &78 \% &10.6 \\
+	\small CS- Symbolicstems and Control $\implies$ & \small Math - Optimization and Control &1.5\% &88 \% &34 \\
+	\small I.2.7 $\implies$ & \small CS - Computation and Languagesge &1.2\% &90 \% &16.9 \\
+	\small Math - Optimization and Control $\implies$ & \small CS - Systems and Control  &1.5\% &56 \% &34 \\
+	\small I.2.7(Natural Language Processing)  $\implies$ & \small CS - Computersmputation and Language  &1.2\% &91 \% &16.9 \\
+	\small G.2.2(Graph Theory)   $\implies$ & \small CS - Discrete Mathematics  &0.8\% &59 \% &8.8 \\
+	\small F.1.3(Complexity Measures)  $\implies$ & \small CS - Computational Complexity  &0.7\% &86 \% &12.6 \\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln der Unterthemen sortiert nach Support mit  Support: 0.1 \% und Konfidenz 50 \%}
+\end{table}
+\subsubsection{Mappings zwischen Klassifikationen}
+\begin{table}[H]
+\centering % used for centering table
+\begin{tabular}{|rl|c|c|c|}
+	\hline
+	\textbf{Regel(ACM $\implies$ }  &\textbf{arXiv.org)} & {Support} &\textbf{Konfidenz} & \textbf{Lift}\\
+	\hline
+	\small G.4(Mathematical Software) $\implies$ & \small CS - Mathematical Softwareftware & 0.1\% &51\% &67.4  \\
+	\small K.4.m(Computers AND Society) $\implies$ & \small CS - Computers and Society &0.2 \% &96 \%  &53.4 \\
+	\small I.2.9(Robotics) $\implies$ & \small CS - Robotics &0.1 \% & 75 \%  &52.1 \\
+	\small H.3.7(Digital Libraries) $\implies$ & \small CS - Digital Libraries &0.3 \% &89 \% &48.7 \\
+	\small I.1.2(Symbolic Manipulation - Algorithm) $\implies$ & \small CS - Symbolic Computation  &0.1 \% &60 \%  &41.3 \\
+	\small I.2.11(Distributed Artificial Intelligence) $\implies$ & \small CS - Multiagent Systems  &0.2 \% &53 \%  &35.9 \\
+	\small H.5.2(User Interfaces) $\implies$ & \small CS - Human-Computer Interaction &0.2 \% &58 \%  &33.7 \\
+	\small I.3.5(Computational Geometry) $\implies$ & \small CS - Computational Geometry &0.3 \% &88 \%  &31.2 \\
+	\small H.2.3(Datebase Managment - Languages) $\implies$ & \small CS - Databases &0.2 \% &91 \%  &30.6 \\
+	\hline
+\end{tabular}
+ \caption{Assoziationsregeln der Unterthemen Support: 1 \% und Konfidenz 50 \%}
+\end{table}
