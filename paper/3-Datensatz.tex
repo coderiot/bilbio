@@ -5,7 +5,10 @@ alle kostenfrei einsehbar.
 
 Der von uns verwendete Datensatz liegt im XML-Format vor und benutzt ein von der Dublin Core Initiative \footnote{http://dublincore.org/} spezifiziertes Schema.
 Jeder Eintrag für eine Publikation wird von einem \PY{n+nt}{<record}\PY{n+nt}{>}-Tag umschlossen und alle Einträge werden in \PY{n+nt}{<ListRecords}\PY{n+nt}{>} aufgeführt.
+\begin{program}
 \input{source/dataset}
+\caption{Struktur des Datensatzes}
+\end{program}
 \subsection{Aufbau der Einträge}
 Die Einträge setzen sich aus zwei Teilen zusammen: den \PY{n+nt}{<header}\PY{n+nt}{>}- und \PY{n+nt}{<metadata}\PY{n+nt}{>}-Teil.
 \subsubsection{Header}
@@ -13,18 +16,23 @@ Im Header-Teil eines Eintrages sind arXiv-spezifische Informationen zur jeder Pu
 Der <identifier> ist ein eindeutiger Bezeichner für eine Publikation in der arXiv-Datenbank.
 Das <datestamp>-Attribut enthält das Datum der letzten Bearbeitung des Eintrags auf dem arXiv-Server.
 Die <setSpec>-Attribute enthalten die von arXiv zugeordneten Themen für eine Publikation.
+\begin{program}
 \input{source/header}
+\caption{Kopfteil eines Eintrage}
+\end{program}
 \subsubsection{Metadaten}
 In den Metadaten befinden sich alle anderen relevanten Informationen zu einer Publikation. Dazu gehören z.B. der Titel der Publikation,
 die Autoren, sowie die Themen. Themen werden anhand unterschiedlicher Klassifizierungen vergeben. Es werden sowohl arXiv-spezifische Themen vergeben als auch Themen, die auf standartisierten Klassifizierungen, zum Beispiel der ACM-Klassifizierung\footnote{http://www.acm.org/about/class/ccs98-html} oder der MSC-Klassifizierung\footnote{http://msc2010.org/mscwiki/index.php?title=MSC2010}, beruhen. Zu jedem Eintrag einer Publikation gehört außerdem ein kurzer Abstract, der den Inhalt kurz erläutern soll. Anschließend gibt es ein oder mehrere <date>-Attribute, die das Datum aller Veränderungen an dem Eintrag der Publikation aufzeichnen. Am Ende befinden sich verschiedene eindeutige Bezeichner, um die Publikation in verschiedenen Datenbanken wieder zu finden.
+\begin{program}
 \input{source/metadata}
+\caption{Metadaten eines Eintrage}
+\end{program}
 
 \subsection{Parsen des Datensatzes?}
 
 \subsection{Eigenschaften}
 Der Datensatz besteht aus $706\,077$ Einträgen mit wissenschaftlichen Publikationen. Die Publikationen werden im Header-Teil eines Eintrags in 18 Themen(hier Oberthemen genannt) eingeteilt. Eine Publikatione kann ein oder mehrere Themen haben. In der nächsten Tabelle ist eine Verteilung der Themen aufgelistet.\\
-\begin{table}[ht]
-\caption{Aufteilung der Oberthemen im  Datensatz} % title of Table
+\begin{table}[H]
 \centering % used for centering table
 \begin{tabular}{| l | l | l |}
 	\hline
@@ -51,16 +59,16 @@ Der Datensatz besteht aus $706\,077$ Einträgen mit wissenschaftlichen Publikatio
 	Physics & physics & $0.0 \%$\\
 	\hline
 \end{tabular}
+\caption{Aufteilung der Oberthemen im  Datensatz} % title of Table
 \end{table}
 
 Die durschnittliche Anzahl der vergebenen Themen beträgt $1.3$ und die maximale Anzahl von Themen für eine Publikation ist $9$. Bei rund $80 \%$ aller Publikationen wurde nur $1$ Thema im Kopfbereich eines Eintrages vergeben. Bei $14 \%$ aller Themen wurden 2 und bei den restlichen $6 \%$ mehr als 2 Themen vergeben.
 
 \subsection{Eigenschaften vom Thema Computer Science}
-Zusätzlich sollen alle Einträge mit cs als Oberthema betrachtet werden und deren Themen im metadata-Teil untersucht werden. Die Anzahl der wissenschaftlichen Publikationen mit dem Oberthema cs(Computer Science) beträgt rund $34\;000$. Die Bezeichnungen der Themen teil sich in 3 große Themengruppen auf. 
-\begin{figure}[ht]
+Zusätzlich sollen alle Einträge mit cs als Oberthema betrachtet werden und deren Themen im metadata-Teil untersucht werden. Die Anzahl der wissenschaftlichen Publikationen mit dem Oberthema cs(Computer Science) beträgt rund $34\;000$. Die Bezeichnungen der Themen teil sich in 2 große Themengruppen auf. Einerseits werden den Publikationen informatische und mathematische Klassen der Klassifikationsysteme ACM und MSC vergeben, die rund $30 \%$ betrifft und andererseits wird hierarchische Unterteilung auf arXiv.org verwendet, die aus $146$ Bezeichnern der Form ``Fachgebiet - Themengebiet'' z.B. ``Computer Science - Information Theroy''. Die durschnittliche Anzahl an Themen pro Eintrag beträgt $2.2$.
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.45]{../visual/csFrequent_filter_acm_and_msc.png}
-	\caption{Fachbereich Informatik}
-	%\label{fbi-logo}
+	\includegraphics[scale=0.3]{../visual/horiCsFreq.png}
+	\caption{20 häufigsten Unterthemen bei Computer Sciencs}
+	\label{cs-freq}
 \end{figure}
-
