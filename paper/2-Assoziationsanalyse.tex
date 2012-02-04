@@ -1,5 +1,5 @@
 \section{Assozationsanalyse}\cite{Agrawal:1993:MAR:170035.170072}% TODO test um unser Startpaper zu zitieren
-Die Assoziationanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
+Die Assoziationsanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
 \subsection{Assozationsregeln}
 Assoziationsregeln sind Implikationen der Form $A \rightarrow B$ und beschreiben den Sachverhalt, dass wenn $A$ auftritt auch $B$ auftritt.
 \subsection{Kenngrößen von Assoziationsregeln}
@@ -25,15 +25,15 @@ Der Lift wird für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
 \]
 \end{mdef}
 \subsection{apriori-Algorithmus}
-Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht, der sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln unterscheidet. \\
+Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht. Dieser unterscheidet sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln. Er beschäftigt sich mit der folgenden Fragestellung: \\
 $I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
-$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ ein Teilmenge der Menge von Items ist. Weiterhin wird ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Kriterium für die Assoziationsregeln verwendet wird. Der Algorithmus wird in zwei Probleme aufgeteilt.
+$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ ein Teilmenge der Menge von Items ist. Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterium für die gesuchten Assoziationsregeln verwendet werden. Der Algorithmus wird in zwei Probleme aufgeteilt.
 \begin{description}
-	\item[Problem 1] Finden aller Teilmengen von Items in die Transaktionen, die mindestens einen Support von $\mathrm{minsupp}$ haben.
+	\item[Problem 1] Finden aller Teilmengen von Items in den Transaktionen, die mindestens einen Support von $\mathrm{minsupp}$ haben.
 	\item[Problem 2] Aus den gefundenen Teilmengen in Problem 1 werden Assoziationsregeln erzeugt. Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
 \end{description}
-\subsubsection{Finden von häufigen Mengen}
-Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten für $L-k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
+\subsubsection{Problem 1: Finden von häufigen Mengen}
+Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten für $L_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
 \begin{algorithm}
 	\caption{apriori Algorithmus}
 	\label{apriori}
@@ -42,9 +42,9 @@ Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $
 	\FOR{$k = 2,\;L_{k-1} = \emptyset,\;k++$}
 		\STATE $L_k \gets \text{apriori-gen}(L_{k-1})$ \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
 		\FORALL{$t \in D$}
-		\STATE $\text{erhöhe Zähler aller Kanditatenmengen in } C_k \text{ mit } t$
+		\STATE $\text{erhöhe Zähler aller Kandidatenmengen in } C_k \text{ mit } t$
 		\ENDFOR \\
-		$L_k \gets \text{alle Kanditatenmengen } C_k \text{ mit } \mathrm{minsupp}$
+		$L_k \gets \text{alle Kandidatenmengen } C_k \text{ mit } \mathrm{minsupp}$
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
@@ -58,7 +58,7 @@ Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Z
 	\STATE \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
 	\STATE $A = \{i_{j_1},\ldots, i_{j_{k-1}}\} \in L_{k-1} \text{ und } B = \{i_{l_1},\ldots, i_{l_{k-1}}\} \in L_{k-1}$
 	\IF{$A \triangle B = \{i_{j_{k-1}}, i_{l_{k-1}}\}$}
-		\STATE $A \cup B \text{wird als Kandidatenmenge zu } C_k \text{ hinzugefügt}$
+		\STATE $A \cup B \text{ wird als Kandidatenmenge zu } C_k \text{ hinzugefügt}$
 	\ENDIF
 	\STATE \COMMENT{Entfernen von Kandidaten, deren (k-1)-elementigen Teilmengen der Obermenge bestehen}
 	\FORALL{$c \in C_k$}
@@ -70,5 +70,5 @@ Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Z
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
-\subsubsection{Erzeugen von Assoziationsregeln}
+\subsubsection{Problem 2: Erzeugen von Assoziationsregeln}
 
