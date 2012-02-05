@@ -113,6 +113,11 @@
  \caption{Assoziationsregeln der Unterthemen sortiert nach Support mit:  Support 0.1 \% und Konfidenz 50 \%}
 \end{table}
 \subsubsection{Mappings zwischen Klassifikationen}
+Die in der folgenden Tabelle dargestellten Regeln sind alle Assoziationsregeln, wo genau ein ACM-Thema auf der linken Seite und ein arxiv-Thema auf der rechten Seite steht.
+Wir haben explizit nach Regeln, die diese Form haben, gesucht, damit eine eindeutige Abbildung zwischen Subjects in der jeweiligen Klassifikationen möglich ist.
+Wir haben keine Regeln der Form $arxiv \rightarrow ACM$ gefunden, was auch logisch ist, da die ACM-Klassifikation eine viel feinere Unterteilung als arxiv anbietet.
+Alle gefundenen Regeln haben relativ hohe Konfidenz- und Liftwerte, was dafür spricht, dass die so entstandenen Mappings zuverlässig sind.
+
 \begin{table}[H]
 \centering % used for centering table
 \begin{tabular}{|rl|c|c|c|}
