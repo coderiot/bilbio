@@ -3,7 +3,16 @@
 In Anlehnung an die Warenkorbanalyse sollen die vergebenen Themen für wissenschaftliche Publikationen analysiert werden,
 um so häufig miteinander vergebene Themen und Brückenthemen zwischen Fachgebieten zu ermitteln. Zusammen mit der Ermittlung von Koautorengraphen und der Zitationsanalyse ist die Analyse von Themen eine der Hauptmethoden der Bibliometrie. Eine Untersuchung der Themenvergabe von wissenschaftlichen Publikationen kann interessante Erkenntnisse liefern, um die zeitliche Entwicklung bestimmten Themengebieten zu verfolgen oder verwandte Publikationen zu ermitteln.
 \subsection{Problemstellung}
-In dieser Arbeit werden die Themen zu wissenschaftlichen Publikationen anhand der veröffentlichten Publikationen auf arXiv.org zum 01.10.2011 beispielhaft untersucht. Das Verfahren, um Beziehungen zwischen Themen zu finden, ist die Assoziationsanalyse. Durch Assoziationsregeln können Themen, die oft zusammen auftreten, schnell aufgedeckt werden, bzw. vorhandenen Korrelationen und Abhängigkeiten zwischen denen ermittelt werden. Durch eine geeignete Sortierung nach den verschiedenen Assoziationsregelnkenngrößen - Support, Konfidenz und Lift, können wir ferner die wichtigsten oder am öftersten im Datensatz vorkommenden Regeln bestimmen. Das durch diese Analyse gewonnene Wissen kann später für den Entwurf eines Paperrecommendersysstems oder das Erstellen eines geeigneten und zuverlässigen Mappings zwischen verschiedenen wissenschlaftlichen Klassifikationen.
+In dieser Arbeit werden die Themen zu wissenschaftlichen Publikationen anhand der veröffentlichten Publikationen auf arXiv.org zum 01.10.2011 beispielhaft untersucht.
+Das Verfahren, um Beziehungen zwischen Themen zu finden, ist die Assoziationsanalyse.
+Durch Assoziationsregeln können Themen, die oft zusammen auftreten, schnell aufgedeckt werden, bzw. vorhandenen Korrelationen und Abhängigkeiten zwischen denen ermittelt werden.
+Durch eine geeignete Sortierung nach den verschiedenen Assoziationsregelnkenngrößen - Support, Konfidenz und Lift, können wir ferner die wichtigsten oder am öftersten im Datensatz vorkommenden Regeln bestimmen.
+Das durch diese Analyse gewonnene Wissen kann später für den Entwurf eines Paperrecommendersysstems oder das Erstellen eines geeigneten und zuverlässigen Mappings zwischen verschiedenen wissenschlaftlichen Klassifikationen.
+\\
+\\
+Unser Analyseansatz basiert auf $Paper$ und die Auswertungen wurden mit Hilfe der Programmiersprache $R$ durchgeführt.
+Für das Parsen der XML-Daten benutzen wir einen in $Python$ geschriebenen Parser.
+
 \subsection{Aufbau dieses Papers}
 Im Weiteren wird dieses Dokument folgendermaßen aufgebaut:\newline
 Kapitel 2 stellt die theoretischen Grundlagen der Assoziationsanalyse vor und erklärt den apriori-Algorithmus, den wir für die Extraktion der Assoziationsregeln in unserer Arbeit benutzen. Im Kapitel 3 beschreiben wir die Merkmale und Besonderheiten des arxiv.org Datensatzes, sowie wie wir diesen weiter verarbeitet haben. In Kapitel 4 geben wir eine detaillierte Auswertung der gefundenen Ergebnisse. Kapitel 5 schlägt weitere Aspekte vor, die erforscht werden können, und betrachtet zugleich mögliche Anwendungen der Forschungsergebnisse. Kapitel 6 fasst nochmal die Arbeit zusammen.
