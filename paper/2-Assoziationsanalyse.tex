@@ -74,4 +74,12 @@ Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Z
 \end{algorithmic}
 \end{algorithm}
 \subsubsection{Problem 2: Erzeugen von Assoziationsregeln}
+Nun sollen aus den gefundenen Mengen in Schritt 1 Assoziationsregel erzeugt werden. Für jede gefundenen häufigen Itemmenge $H$ werden folgende Schritte ausgeführt.  
+\begin{enumerate}
+	\item Berechne alle nichtleeren Teilmengen von $H$, also $\mathcal{P}(H) \setminus \emptyset$.
+	\item Für jede Teilmenge $a \in \mathcal{P}(H) \setminus \emptyset$ erzeuge eine Regel der Form $a \implies H \setminus a$.
+	\item Berechne für die erzeugte Regel die Konfidenz $\mathrm{conf}(a \implies H \setminus a)$
+	\item  Ist $\mathrm{conf}(a \implies H \setminus a) \geq \mathrm{minconf}$, dann ist $a \implies H \setminus a$ eine Assoziationregel unter den gegebenen Bedingungen.
+\end{enumerate}
 
+Einen effizienten Algorithmus, der nach diesem Verfahren Assoziationsregeln erzeugt ist zu finden in \cite{Agrawal:1994:FAM:645920.672836}.
