@@ -1,5 +1,12 @@
 \section{Auswertung der Ergebnisse}
 \subsection{Analyse der Oberthemen}
+Zunächst haben wir die Themen, die im Header jedes Publikationseintrags auftreten, die sogenannten \PY{n+nt}{<setSpec}\PY{n+nt}{>}, untersucht.
+Dabei konnten wir 19 einzigartige Themen feststellen, 13 davon waren Unterthemen der Physik.
+Die anderen 6 waren wie folgt: $math$ (Mathematics), $cs$ (Computer Science), $nlin$ (Nonlinear Sciences), $q-bio$ (Quantitative Biology), $stat$ (Statistics) und $q-fin$ (Quantitative Finance).
+Wir haben auf dem Gesamtdatensatz den apriori-Algorithums mit den Parametern $minsupp$ = 0.5\% und $minconf$ = 50\% angewandt, und dabei die folgenden 8 Assoziationsregeln gewonnen (Tabelle \ref{tab:header}). %cite table
+Weiterhin haben wir die Unterthemen der Physik zusammengefasst und dann überprüft, was für Assoziationsregeln sich ergeben.
+Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
+
 \subsubsection{Assoziationsregeln}
 \begin{table}[H]
 \centering % used for centering table
@@ -18,6 +25,7 @@
 		\hline
 \end{tabular}
 \caption{Assoziationsregeln der Oberthemen minsupp=0.5\% und minconf=50\%}
+\label{tab:header}
 \end{table}
 
 \begin{table}[H]
@@ -33,7 +41,9 @@
 	\hline
 \end{tabular}
  \caption{Assoziationsregeln mit zusammegefassten physics-Themen: Support 0.1 \% und Konfidenz 50 \%}
+\label{tab:headerCompact}
 \end{table}
+
 \subsection{Analyse der Themen in den Metadaten}
 \subsubsection{Assoziationsregeln}
 \begin{table}[H]
