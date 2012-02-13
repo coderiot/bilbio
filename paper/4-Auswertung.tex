@@ -48,9 +48,17 @@ Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
 \subsubsection{Assoziationsregeln}
 Wie wir bereits gesehen haben, können wir anhand der Themen in den \PY{n+nt}{<setSpec}\PY{n+nt}{>} Attributen der Header relativ wenige interessante Informationen gewinnen.
 Das liegt zu einem an der relativ geringen Anzahl von Themen, die da vergeben werden, und zum anderen daran, dass diese Themen viel zu allgemein sind.
-Deshalb haben wir unsere weiteren Analysen anhand der Subjects, die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, durchgeführt und zwar, auf dem Oberthema $Computer Science$ beschränkt.
+Deshalb haben wir unsere weiteren Analysen anhand der Subjects, die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, durchgeführt und zwar, auf dem Oberthema $Computer Science$ beschränkt.\\
 
-%Themen wie Math-Combinatorics tauchen auf, weil die jeweiligen Publicationen auch math in den <setSpec>s enthalten haben.
+
+Zunächst haben wir den apriori-Algorithmus mit den Parametern $minsupp = 1\% $ und $ minconf = 50\%$ auf den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Tags aller Publikationen, deren Oberthema $Computer Science$ war, angewandt.
+Dabei haben wir die folgenden 7 Regeln gewonnen (Tabelle \ref{tab:arules7}).
+Bei einer näheren Betrachtung dieser Regelen können wir Folgendes feststellen:\\
+\begin{itemize}
+\item Wir haben Themen nicht nur aus der Informatik, sondern auch solche, die zu der Physik oder der Mathematik gehören. Das liegt daran, dass die jeweiligen Publikationen auch Mathematik oder Physik in den \PY{n+nt}{<setSpec}\PY{n+nt}{>} Tags hatten. Diese Vermischung zeigt, dass es sich um Publikationen eines Randgebiets handelt - solche, die mehreren Forschungsrichtungen gleichzeitig untergeordnet werden können.
+\item Zwei von den Regeln treten auch spiegelverkehrt auf: einmal in der Form $A \rightarrow B$, einmal in der Form $B \rightarrow A$.
+\item Es treten verschiedene Klassifikationen auf: sowohl diese von arXiv.org, als auch die ACM-Klassifikation. Solche ``vermischte'' Regeln können wir zur Herstellung von Mappings zwischen den Klassifikationen anwenden. Mehr dazu in \ref{sec:mappings}
+\end{itemize}
 
 \begin{table}[H]
 \centering % used for centering table
@@ -68,7 +76,15 @@ Deshalb haben wir unsere weiteren Analysen anhand der Subjects, die in den \PY{n
 	\hline
 \end{tabular}
  \caption{Assoziationsregeln der Unterthemen: Support 1 \% und Konfidenz 50 \%}
+\label{tab:arules7}
 \end{table}
+
+Für unsere weitere Analyse haben wir den $support$ Wert runter auf $0.1\%$ gesetzt.
+Davon haben wir uns mehrere Regeln erhofft, aufgrund deren mehrere Zusammenhänge erkannt werden können.
+Ein $support$ von $0.1\%$ bedeutet bei den knapp $34 000$ Publikationen mit dem Oberthema $Computer Science$ etwa $30$ Publikationen, für die eine gefundene Regel zutrifft.
+Das haben wir als eine gute Basis eingeschätzt, um spezifische Beziehungen zwischen einzelnen Themen aufzudecken.
+Mit diesem Ansatz haben wir $218$ Assoziationsregeln gewonnen, die Top 10 von denen, jeweils nach einer der Assoziationsregelnkenngrößen sortiert, unten aufgeführt werden.
+
 \begin{table}[H]
 \centering % used for centering table
 \begin{tabular}{|rl|l|l|l|}
@@ -129,6 +145,7 @@ Deshalb haben wir unsere weiteren Analysen anhand der Subjects, die in den \PY{n
  \caption{Assoziationsregeln der Unterthemen sortiert nach Support mit:  Support 0.1 \% und Konfidenz 50 \%}
 \end{table}
 \subsubsection{Mappings zwischen Klassifikationen}
+\label{sec:mappings}
 Die in der folgenden Tabelle dargestellten Regeln sind alle Assoziationsregeln, wo genau ein ACM-Thema auf der linken Seite und ein arxiv-Thema auf der rechten Seite steht.
 Wir haben explizit nach Regeln, die diese Form haben, gesucht, damit eine eindeutige Abbildung zwischen Subjects in der jeweiligen Klassifikationen möglich ist.
 Wir haben keine Regeln der Form $arxiv \rightarrow ACM$ gefunden, was auch logisch ist, da die ACM-Klassifikation eine viel feinere Unterteilung als arxiv anbietet.
