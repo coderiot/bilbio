@@ -28,12 +28,17 @@ Der Lift wird für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
 \]
 \end{mdef}
 \subsection{apriori-Algorithmus}
-Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht. Dieser unterscheidet sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln. Er beschäftigt sich mit der folgenden Fragestellung: \\
+Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht.
+Dieser unterscheidet sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln.
+Er beschäftigt sich mit der folgenden Fragestellung: \\
 $I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
-$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ ein Teilmenge der Menge von Items ist. Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterium für die gesuchten Assoziationsregeln verwendet werden. Der Algorithmus wird in zwei Probleme aufgeteilt.
+$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ eine Teilmenge der Menge von Items ist.
+Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterium für die gesuchten Assoziationsregeln verwendet werden.
+Der Algorithmus wird in zwei Probleme aufgeteilt.
 \begin{description}
 	\item[Problem 1] Finden aller Teilmengen von Items in den Transaktionen, die mindestens einen Support von $\mathrm{minsupp}$ haben.
-	\item[Problem 2] Aus den gefundenen Teilmengen in Problem 1 werden Assoziationsregeln erzeugt. Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
+	\item[Problem 2] Aus den gefundenen Teilmengen in Problem 1 werden Assoziationsregeln erzeugt.
+    Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
 \end{description}
 \subsubsection{Problem 1: Finden von häufigen Mengen}
 Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten für $L_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
