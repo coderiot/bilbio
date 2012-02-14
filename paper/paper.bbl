@@ -30,4 +30,9 @@ Michael Hahsler, Bettina Gr\"{u}n, Kurt Hornik und Christian Buchta.
 \newblock Introduction to arules - A computational environment for mining
   association rules and frequent item sets, 2011.
 
+\bibitem[TSK05]{Tan:2005:IDM:1095618}
+Pang-Ning Tan, Michael Steinbach und Vipin Kumar.
+\newblock {\em Introduction to Data Mining, (First Edition)}, Kapitel~6.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2005.
+
 \end{thebibliography}

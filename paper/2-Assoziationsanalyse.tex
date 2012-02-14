@@ -1,30 +1,30 @@
 \section{Assozationsanalyse}
 \label{sec:assoziationsanalyse}
-
-\cite{Agrawal:1993:MAR:170035.170072}% TODO test um unser Startpaper zu zitieren
-Die Assoziationsanalyse beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
+%\cite{Agrawal:1993:MAR:170035.170072}% TODO test um unser Startpaper zu zitieren
+Die Assoziationsanalyse \cite{Tan:2005:IDM:1095618} beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
 \subsection{Assozationsregeln}
-Assoziationsregeln sind Implikationen der Form $A \rightarrow B$ und beschreiben den Sachverhalt, dass wenn $A$ auftritt auch $B$ auftritt.
+Eine Assoziationsregel ist eine Implikation der Form $A \rightarrow B$ mit $A \cap B = \emptyset$, also $A$ und $B$ sind disjunkt. Die Regel $A \rightarrow B$ soll hierbei aussagen, dass wenn $A$ in einer Transaktion auftritt auch $B$ mit einer gewissen Wahrscheinlichkeit vorkommt. Um diese Wahrscheinlichkeit zu beschreiben werden dieWerte des Supports und der Konfidenz verwendet.
 \subsection{Kenngrößen von Assoziationsregeln}
 \subsubsection{Support}
-Der Support bezeichnet die relative Häufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz.
+Der Support bezeichnet die relative Häufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz. Er wird unter anderem dafür verwendet um uninteressante Assoziationsregeln herauszufiltern. Wird der minimale Support zu klein gewählt kann es vorkommen, dass eine Regel zufällig und damit nicht aussagekräftig ist.
 \begin{mdef}[Support]
 \[
-\mathrm{support}(X) = \frac{\text{Anzahl der vorkommen von X im Datensatz}}{\text{Anzahl aller Transaktionen}}
+\mathrm{support}(X) = \frac{\text{Anzahl der Vorkommen von X im Datensatz}}{\text{Anzahl aller Transaktionen}}
 \]
 \end{mdef}
 \subsubsection{Konfidenz}
-Die Konfidenz ist die relative Häufigkeit der Transaktionen in denen X zusammen mit Y vorkommt. Oder anders formuliert, beschreibt diese, wie oft Y vorkommt, gegeben dass X vorkommt.
+Die Konfidenz ist die relative Häufigkeit der Transaktionen in denen X zusammen mit Y vorkommt. Oder anders formuliert, beschreibt diese, wie oft Y in der Datenbasis vorkommt, gegeben dass X vorkommt. Die Konfidenz kann also als Maß der Zuverläßigkeit für die Aussage einer Regel angesehen werden.
 \begin{mdef}[Konfidenz]
 \[
 \mathrm{conf}(X\rightarrow Y) = \frac{\mathrm{support}(X \cup Y)}{\mathrm{support}(X)}
 \]
 \end{mdef}
 \subsubsection{Lift}
-Der Lift wird für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
+Regeln mit einem hohen Konfidenzwert können irreführend sein, da nicht der der Support für die rechte Seite der Regel mit einbezogen wird. Deswegen wird der Lift für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
+Der Lift berechnet den Anteil der Konfidenz der Regel und dem Support der rechten Seite der Regel und ist eine positive Zahl.
 \begin{mdef}[Lift]
 \[
-\mathrm{lift}(X\rightarrow Y) = \frac{ \mathrm{support}(X \cup Y)}{ \mathrm{support}(Y) \cdot \mathrm{support}(X) }
+\mathrm{lift}(X\rightarrow Y) =\frac{\mathrm{conf}(X \rightarrow Y)}{\mathrm{support}(Y)} =  \frac{ \mathrm{support}(X \cup Y)}{ \mathrm{support}(Y) \cdot \mathrm{support}(X) }
 \]
 \end{mdef}
 \subsection{apriori-Algorithmus}
