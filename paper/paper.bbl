@@ -1,27 +1,32 @@
 \begin{thebibliography}{HGHB11}
 
 \bibitem[AIS93]{Agrawal:1993:MAR:170035.170072}
-Rakesh Agrawal, Tomasz Imieli\'{n}ski, and Arun Swami.
+Rakesh Agrawal, Tomasz Imieli\'{n}ski und Arun Swami.
 \newblock Mining association rules between sets of items in large databases.
 \newblock In {\em Proceedings of the 1993 ACM SIGMOD international conference
-  on Management of data}, SIGMOD '93, pages 207--216, New York, NY, USA, 1993.
+  on Management of data}, SIGMOD '93, Seiten 207--216, New York, NY, USA, 1993.
   ACM.
 
 \bibitem[AS94]{Agrawal:1994:FAM:645920.672836}
-Rakesh Agrawal and Ramakrishnan Srikant.
+Rakesh Agrawal und Ramakrishnan Srikant.
 \newblock Fast Algorithms for Mining Association Rules in Large Databases.
 \newblock In {\em Proceedings of the 20th International Conference on Very
-  Large Data Bases}, VLDB '94, pages 487--499, San Francisco, CA, USA, 1994.
+  Large Data Bases}, VLDB '94, Seiten 487--499, San Francisco, CA, USA, 1994.
   Morgan Kaufmann Publishers Inc.
 
+\bibitem[HC11]{HahChe11}
+Michael Hahsler und Sudheer Chelluboina.
+\newblock Visualizing Association Rules: Introduction to the R-extension
+  Package arulesViz, 2011.
+
 \bibitem[HCHB11]{DBLP:journals/jmlr/HahslerCHB11}
-Michael Hahsler, Sudheer Chelluboina, Kurt Hornik, and Christian Buchta.
+Michael Hahsler, Sudheer Chelluboina, Kurt Hornik und Christian Buchta.
 \newblock The arules R-Package Ecosystem: Analyzing Interesting Patterns from
   Large Transaction Data Sets.
 \newblock {\em Journal of Machine Learning Research}, 12:2021--2025, 2011.
 
-\bibitem[HGHB11]{HahChe11}
-Michael Hahsler, Bettina Gr\"{u}n, Kurt Hornik, and Christian Buchta.
+\bibitem[HGHB11]{HahCheGruHorBuc11}
+Michael Hahsler, Bettina Gr\"{u}n, Kurt Hornik und Christian Buchta.
 \newblock Introduction to arules - A computational environment for mining
   association rules and frequent item sets, 2011.
 

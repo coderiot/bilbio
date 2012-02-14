@@ -200,4 +200,31 @@ Alle gefundenen Regeln haben relativ hohe Konfidenz- und Liftwerte, was dafür sp
 \end{tabular}
  \caption{Assoziationsregeln der Unterthemen: Support 0.1 \% und Konfidenz 50 \%}
 \end{table}
-\subsubsection{Analyse über die Zeit}
+\subsubsection{zeitliche Analyse gefundener Regeln}
+Die zeitliche Betrachtung der Regeln macht es möglich die Entwicklung der Themen und die Korrelation von Themen für wissenschaftliche Publikationen zu beobachten. Mehrere Szenarien sind für die Entwicklung denkbar:
+\begin{enumerate}
+	\item Themengebiete können verschmelzen
+	\item ein Thema kann sich in verschiedene Gebiete aufteilen
+	\item Themen können verschwinden oder entstehen
+\end{enumerate}
+
+Im folgenden werden die Szenarien Verschmelzung und Entstehung betrachtet, die bei der Analyse der zeitliche Entwicklung der Regeln aus Tabelle \ref{tab:arules7} entstanden sind.
+
+Als erstes wird der zeitliche Verlauf der Regel \textbf{Computer Science - Systems and Control} $\implies$ \textbf{Mathematics - Optimization and Control} betrachtet.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.425]{../visual/trend/csmathscaled.png}
+	\caption{Entstehung eines Themas}
+	\label{fig:csmath}
+\end{figure}
+In Abbildung \ref{fig:csmath} ist zu erkennen, dass vor dem Jahr 2004 nur Publikationen mit dem Thema Optimization and Control der Mathematik veröffentlicht wurden, aber keine mit dem Thema System and Control in der Informatik.
+Vom Jahr 2004 bis 2006 ist zu sehen, dass nun alle Publikationen im Themengebiet Computer Science - System and Control immer im Zusammenhang mit dem Thema Mathematics - Optimization and Control veröffentlicht wurden. Ab dem Jahr 2006 erhöht sich die Anzahl der veröffentlichen Publikationen mit dem Thema Computer Science - System and Control kontinuierlich auch ohne dem Thema aus der Mathematik, das sich im gleichen Zeitraum deutlich seltener vergebenen wurde, als in den Jahren davor. Anhand des zeitlichen Verlauf lässt sich also feststellen, das sich das Interesse teilweise vom Thema Opimization and Control zum Thema System and Control verschoben hat und das Thema System and Control der Informatik in irgendeiner Form aus dem Thema Optimization and Control der Mathematik entwickelt hat.
+
+Als nächstes Betrachten wir die zeitliche Entwicklung der Regel \textbf{Computer Science - Social and Information Networks} $\implies$ \textbf{Physics - Physics and Society}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.425]{../visual/trend/csphscaled.png}
+	\caption{Verschmelzung von Themen}
+	\label{csph}
+\end{figure}
+Bis zum Jahr 2009 werden die beiden Themen unabhängig vergeben und es zeigt sich keine Korrelation der beiden Themengebiete. Erst ab dem Jahr 2009 werden beide Themen bei Publikationen zusammen vergeben. Dazu kommt eine schneller Anstieg bei der gemeinsamen Vergabe und der ebenso deutliche Abfall bei der Häufigkeit des Themas Physics - Physics and Society. Dies lässt einen starken Zusammenhang zwischen beiden Themen vermuten. Und da das Thema Computer Science - Social and Information Networks im gleichem Zeitraum einen deutlichen Anstieg zeigt, kann von einer großen Überschneidung der Themengebiete ausgegangen werden. Auch historisch lässt sich die Entwicklung einordnen. Mit dem entstehen von sozialen Netzwerken im Internet hat auch die Erforschung ebendieser in der Informatik an Interesse gewonnen. Die besteht also die Möglichkeit, dass sich die Informatik die Verfahren der Physik in diesem Themengebiet bedient hat und das in der Physik ebenfalls Interesse an diesen Netzwerken entstanden ist, sodass sich beide Themengebiete stärker austauschen udn zusammenarbeiten.
