@@ -1,9 +1,9 @@
 \section{Auswertung der Ergebnisse}
 \subsection{Analyse der Oberthemen}
-Zunächst haben wir die Themen, die im Header jedes Publikationseintrags auftreten, die sogenannten \PY{n+nt}{<setSpec}\PY{n+nt}{>}, untersucht.
+Zunächst haben wir die Themen, die im Header jedes Eintrags einer Publikation auftreten, die sogenannten \PY{n+nt}{<setSpec}\PY{n+nt}{>}, untersucht.
 Dabei konnten wir 19 einzigartige Themen feststellen, 13 davon waren Unterthemen der Physik.
 Die anderen 6 waren wie folgt: $math$ (Mathematics), $cs$ (Computer Science), $nlin$ (Nonlinear Sciences), $q-bio$ (Quantitative Biology), $stat$ (Statistics) und $q-fin$ (Quantitative Finance).
-Wir haben auf dem Gesamtdatensatz den apriori-Algorithums mit den Parametern $minsupp$ = 0.5\% und $minconf$ = 50\% angewandt, und dabei die folgenden 8 Assoziationsregeln gewonnen (Tabelle \ref{tab:header}). %cite table
+Wir haben auf dem Gesamtdatensatz den apriori-Algorithums mit den Parametern $minsupp$ = 0.5\% und $minconf$ = 50\% angewandt, und dabei die folgenden 8 Assoziationsregeln(Tabelle \ref{tab:header}) gefunden. %cite table
 Weiterhin haben wir die Unterthemen der Physik zusammengefasst und dann überprüft, was für Assoziationsregeln sich ergeben.
 Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
 
@@ -47,8 +47,8 @@ Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
 \subsection{Analyse der Themen in den Metadaten}
 \subsubsection{Assoziationsregeln}
 Wie wir bereits gesehen haben, können wir anhand der Themen in den \PY{n+nt}{<setSpec}\PY{n+nt}{>} Attributen der Header relativ wenige interessante Informationen gewinnen.
-Das liegt zu einem an der relativ geringen Anzahl von Themen, die da vergeben werden, und zum anderen daran, dass diese Themen viel zu allgemein sind.
-Deshalb haben wir unsere weiteren Analysen anhand der Subjects, die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, durchgeführt und zwar auf dem Oberthema $Computer Science$ beschränkt.\\
+Das liegt zu einem an der relativ geringen Anzahl von Themen, die pro Publikation vergeben wurden, und zum anderen daran, dass diese Themen viel zu allgemein sind.
+Deshalb haben wir unsere weiteren Analysen auf die Subjects , die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, aus dem Oberthema \textit{Computer Science} beschränkt.
 
 
 Zunächst haben wir den apriori-Algorithmus mit den Parametern $minsupp = 1\% $ und $ minconf = 50\%$ auf den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Tags aller Publikationen, deren Oberthema $Computer Science$ war, angewandt.
@@ -80,13 +80,13 @@ Bei einer näheren Betrachtung dieser Regeln können wir Folgendes feststellen:\\
 \label{tab:arules7}
 \end{table}
 
-Für unsere weitere Analyse haben wir den $support$ Wert runter auf $0.1\%$ gesetzt.
-Davon haben wir uns mehrere Regeln erhofft, aufgrund deren mehrere Zusammenhänge erkannt werden können.
-Ein $support$ von $0.1\%$ bedeutet bei den knapp $34 000$ Publikationen mit dem Oberthema $Computer Science$ etwa $30$ Publikationen, für die eine gefundene Regel zutrifft.
+Für unsere weitere Analyse haben wir den $support$ Wert auf $0.1\%$ verringert.
+Davon haben wir uns mehr Regeln erhofft, aufgrund deren mehrere Zusammenhänge erkannt werden können.
+Ein $support$ von $0.1\%$ bedeutet bei den knapp $34 000$ Publikationen mit dem Oberthema $Computer Science$ etwa $34$ Publikationen, für die eine gefundene Regel zutrifft.
 Das haben wir als eine gute Basis eingeschätzt, um spezifische Beziehungen zwischen einzelnen Themen aufzudecken.
 Mit diesem Ansatz haben wir $218$ Assoziationsregeln gewonnen, die Top 10 von denen, jeweils nach einer der Assoziationsregelnkenngrößen sortiert, unten aufgeführt werden.
-Unserer Einschätzung nach, decken diese Tabellen im großen und ganzen die interessantesten Regeln - diejenigen, die am öftersten vorkommen (mit den höchsten $supp$-Werten) und diejenigen, die am stärksten sind (mit den höchsten $conf$- und $lift$-Werten).
-Weitere wichtige Regeln, die nicht zu den Top 10s gehören, aber trotzdem starke $Konfidenz$ und $Lift$ haben, werden in der Tabelle \ref{tab:otherRules} aufgeführt.
+Unserer Einschätzung nach, decken diese Tabellen im großen und ganzen die interessantesten Regeln - diejenigen, die am häufigsten vorkommen (mit den höchsten $supp$-Werten) und diejenigen, die am stärksten sind (mit den höchsten $conf$- und $lift$-Werten).
+Weitere wichtige Regeln, die nicht zu den Top 10 gehören, aber trotzdem starke $Konfidenz$ und $Lift$ haben, werden in der Tabelle \ref{tab:otherRules} aufgeführt.
 
 \begin{table}[H]
 \centering % used for centering table
