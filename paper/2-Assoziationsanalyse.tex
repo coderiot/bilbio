@@ -3,7 +3,7 @@
 %\cite{Agrawal:1993:MAR:170035.170072}% TODO test um unser Startpaper zu zitieren
 Die Assoziationsanalyse \cite{Tan:2005:IDM:1095618} beschreibt die Suche nach Assoziationsregeln innnerhalb einer Menge von Transaktionen. Transaktionen sind endliche Teilmengen aus einer sogenannten Itemmenge. Items sind Objekte, die in Transaktionen auftreten können. Ein Datensatz zur Assoziationsanalyse besteht also aus einer Menge von Transaktionen.
 \subsection{Assozationsregeln}
-Eine Assoziationsregel ist eine Implikation der Form $A \rightarrow B$ mit $A \cap B = \emptyset$, also $A$ und $B$ sind disjunkt. Die Regel $A \rightarrow B$ soll hierbei aussagen, dass wenn $A$ in einer Transaktion auftritt auch $B$ mit einer gewissen Wahrscheinlichkeit vorkommt. Um diese Wahrscheinlichkeit zu beschreiben werden dieWerte des Supports und der Konfidenz verwendet.
+Eine Assoziationsregel ist eine Implikation der Form $A \rightarrow B$ mit $A \cap B = \emptyset$, also $A$ und $B$ sind disjunkt. Die Regel $A \rightarrow B$ soll aussagen, dass wenn $A$ in einer Transaktion auftritt auch $B$ mit einer gewissen Wahrscheinlichkeit vorkommt. Um diese Wahrscheinlichkeit zu beschreiben werden die Werte des Supports und der Konfidenz verwendet.
 \subsection{Kenngrößen von Assoziationsregeln}
 \subsubsection{Support}
 Der Support bezeichnet die relative Häufigkeit des Auftretens der Itemmenge $X$ in einem Datensatz. Er wird unter anderem dafür verwendet um uninteressante Assoziationsregeln herauszufiltern. Wird der minimale Support zu klein gewählt kann es vorkommen, dass eine Regel zufällig und damit nicht aussagekräftig ist.
@@ -20,8 +20,8 @@ Die Konfidenz ist die relative Häufigkeit der Transaktionen in denen X zusammen 
 \]
 \end{mdef}
 \subsubsection{Lift}
-Regeln mit einem hohen Konfidenzwert können irreführend sein, da nicht der der Support für die rechte Seite der Regel mit einbezogen wird. Deswegen wird der Lift für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
-Der Lift berechnet den Anteil der Konfidenz der Regel und dem Support der rechten Seite der Regel und ist eine positive Zahl.
+Regeln mit einem hohen Konfidenzwert können irreführend sein, da der der Support für die rechte Seite der Regel nicht mit einbezogen wird. Deswegen wird der Lift für die Stärke einer Regel bzw. deren Bedeutung herrangezogen.
+Der Lift berechnet den Anteil der Konfidenz der Regel und dem Support der rechten Seite der Regel und ist ein Faktor wieviel öfter $X$ und $Y$ zusammen in der Datenbasis auftreten, als getrennt.
 \begin{mdef}[Lift]
 \[
 \mathrm{lift}(X\rightarrow Y) =\frac{\mathrm{conf}(X \rightarrow Y)}{\mathrm{support}(Y)} =  \frac{ \mathrm{support}(X \cup Y)}{ \mathrm{support}(Y) \cdot \mathrm{support}(X) }
@@ -30,10 +30,10 @@ Der Lift berechnet den Anteil der Konfidenz der Regel und dem Support der rechte
 \subsection{apriori-Algorithmus}
 Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht.
 Dieser unterscheidet sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln.
-Er beschäftigt sich mit der folgenden Fragestellung: \\
-$I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
-$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subset I$ eine Teilmenge der Menge von Items ist.
-Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterium für die gesuchten Assoziationsregeln verwendet werden.
+Der Algorithmus baut auf folgende Sachverhalte auf:
+Sei $I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
+$D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subseteq I$ eine Teilmenge der Menge von Items ist.
+Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterien für die gesuchten Assoziationsregeln verwendet werden.
 Der Algorithmus wird in zwei Probleme aufgeteilt.
 \begin{description}
 	\item[Problem 1] Finden aller Teilmengen von Items in den Transaktionen, die mindestens einen Support von $\mathrm{minsupp}$ haben.
@@ -41,11 +41,11 @@ Der Algorithmus wird in zwei Probleme aufgeteilt.
     Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
 \end{description}
 \subsubsection{Problem 1: Finden von häufigen Mengen}
-Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden $L_1$. In der k-ten Iteration werden neue Kandidaten für $L_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der erzeugten Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
-\begin{algorithm}
+Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden die Menge $L_1$. In der k-ten Iteration werden neue Kandidaten für $L_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der gefundenen Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
+\begin{algorithm}[H]
 	\caption{apriori Algorithmus}
 	\label{apriori}
-\begin{algorithmic}
+\begin{algorithmic}[i]
 	\STATE $L_1\gets \{\text{alle Items mit } \mathrm{minsupp}\}$
 	\FOR{$k = 2,\;L_{k-1} = \emptyset,\;k++$}
 		\STATE $L_k \gets \text{apriori-gen}(L_{k-1})$ \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
@@ -56,13 +56,11 @@ Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
-
-Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kandidaten wird überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$.
-
-\begin{algorithm}
+Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kandidaten wird überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$. 
+\begin{algorithm}[H]
 	\caption{Erzeugung der Kandidatenmengen}
 	\label{apriori-gen}
-\begin{algorithmic}
+\begin{algorithmic}[i]
 	\STATE \COMMENT{Erzeugung von k-elementigen Kandidatenmengen}
 	\STATE $A = \{i_{j_1},\ldots, i_{j_{k-1}}\} \in L_{k-1} \text{ und } B = \{i_{l_1},\ldots, i_{l_{k-1}}\} \in L_{k-1}$
 	\IF{$A \triangle B = \{i_{j_{k-1}}, i_{l_{k-1}}\}$}
@@ -79,7 +77,7 @@ Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Z
 \end{algorithmic}
 \end{algorithm}
 \subsubsection{Problem 2: Erzeugen von Assoziationsregeln}
-Nun sollen aus den gefundenen Mengen in Schritt 1 Assoziationsregeln erzeugt werden.
+Nun sollen aus den gefundenen Mengen in Problem 1 Assoziationsregeln erzeugt werden.
 Für jede gefundene häufige Itemmenge $H$ werden folgende Schritte ausgeführt:
 \begin{enumerate}
 	\item Berechne alle nichtleeren Teilmengen von $H$, also $\mathcal{P}(H) \setminus \emptyset$.
