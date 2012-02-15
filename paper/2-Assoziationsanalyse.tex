@@ -31,7 +31,7 @@ Der Lift berechnet den Anteil der Konfidenz der Regel und dem Support der rechte
 Der apriori-Algorithmus wurde 1994 von \cite{Agrawal:1994:FAM:645920.672836}  veröffentlicht.
 Dieser unterscheidet sich fundamental zu denbis dato existierenden Algorithmen zum Finden von Assoziationsregeln.
 Der Algorithmus baut auf folgende Sachverhalte auf:
-Sei $I = \{i_1, i_2, \ldots i_m\}$ ist eine endliche Menge von Items, die in einer Transaktion vorkommen können.
+Sei $I = \{i_1, i_2, \ldots i_m\}$ eine endliche Menge von Items, die in einer Transaktion vorkommen können.
 $D = \{t_1, t_2, \ldots , t_n\}$ ist eine Menge von Transaktionen, wobei jede Transaktion $T \subseteq I$ eine Teilmenge der Menge von Items ist.
 Weiterhin werden ein minimaler Support $\mathrm{minsupp}$ und eine minimale Konfidenz $\mathrm{minconf}$ definiert, die als Einschränkungskriterien für die gesuchten Assoziationsregeln verwendet werden.
 Der Algorithmus wird in zwei Probleme aufgeteilt.
@@ -41,7 +41,10 @@ Der Algorithmus wird in zwei Probleme aufgeteilt.
     Nur Regeln, die mindestens eine Konfidenz von $\mathrm{minconf}$ haben, werden berücksichtigt.
 \end{description}
 \subsubsection{Problem 1: Finden von häufigen Mengen}
-Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$. Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden die Menge $L_1$. In der k-ten Iteration werden neue Kandidaten für $L_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen. Der Algorithmus terminiert, wenn keine der gefundenen Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
+Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $\mathrm{minsupp}$ haben, und $C_k$ die Menge möglicher Kandidaten für $L_k$.
+Im ersten Schritt wird die Häufigkeit aller Items in den Transaktionen aus dem gesamten Datensatz $D$ berechnet und die Items, die mindestens $\mathrm{minsupp}$ haben, bilden die Menge $L_1$.
+In der k-ten Iteration werden neue Kandidaten $C_k$ erzeugt und wenn diese wieder $\mathrm{minsupp}$ übersteigen, werden sie in $L_k$ aufgenommen.
+Der Algorithmus terminiert, wenn keine der gefundenen Kandidatenmengen in $L_k$ aufgenommen wurde, also $L_k = \emptyset$.
 \begin{algorithm}[H]
 	\caption{apriori Algorithmus}
 	\label{apriori}
@@ -56,7 +59,9 @@ Sei $L_k$ die Menge aller Mengen mit k Items, die mindestens einen Support von $
 	\ENDFOR
 \end{algorithmic}
 \end{algorithm}
-Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten. Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben. Bei den so entstandenen $k$-elementigen Kandidaten wird überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_k-1$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$. 
+Die Erzeugung von $k$-elementigen Kandidatenmengen verläuft in zwei Schritten.
+Zunächst werden alle $(k-1)$-elementigen Itemmengen paarweise vereinigt, die eine gemeinsame $(k-2)$-elementige Teilmenge haben.
+Bei den so entstandenen $k$-elementigen Kandidaten wird überprüft, ob alle $(k-1)$-elementigen Teilmengen in $L_{k-1}$ enthalten sind, wenn nicht, dann entferne die jeweilige Menge aus $C_k$.
 \begin{algorithm}[H]
 	\caption{Erzeugung der Kandidatenmengen}
 	\label{apriori-gen}

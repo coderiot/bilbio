@@ -3,7 +3,7 @@
 Zunächst haben wir die Themen, die im Header jedes Eintrags einer Publikation auftreten, die sogenannten \PY{n+nt}{<setSpec}\PY{n+nt}{>}, untersucht.
 Dabei konnten wir 19 einzigartige Themen feststellen, 13 davon waren Unterthemen der Physik.
 Die anderen 6 waren wie folgt: $math$ (Mathematics), $cs$ (Computer Science), $nlin$ (Nonlinear Sciences), $q-bio$ (Quantitative Biology), $stat$ (Statistics) und $q-fin$ (Quantitative Finance).
-Wir haben auf dem Gesamtdatensatz den apriori-Algorithums mit den Parametern $minsupp$ = 0.5\% und $minconf$ = 50\% angewandt, und dabei die folgenden 8 Assoziationsregeln(Tabelle \ref{tab:header}) gefunden. %cite table
+Wir haben auf dem Gesamtdatensatz den apriori-Algorithums mit den Parametern $minsupp$ = 0.5\% und $minconf$ = 50\% angewandt, und dabei die folgenden 8 Assoziationsregeln (Tabelle \ref{tab:header}) gefunden. %cite table
 Weiterhin haben wir die Unterthemen der Physik zusammengefasst und dann überprüft, was für Assoziationsregeln sich ergeben.
 Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
 
@@ -48,7 +48,7 @@ Die Ergebnisse sind in Tabelle \ref{tab:headerCompact} dargestellt.
 \subsubsection{Assoziationsregeln}
 Wie wir bereits gesehen haben, können wir anhand der Themen in den \PY{n+nt}{<setSpec}\PY{n+nt}{>} Attributen der Header relativ wenige interessante Informationen gewinnen.
 Das liegt zu einem an der relativ geringen Anzahl von Themen, die pro Publikation vergeben wurden, und zum anderen daran, dass diese Themen viel zu allgemein sind.
-Deshalb haben wir unsere weiteren Analysen auf die Subjects , die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, aus dem Oberthema \textit{Computer Science} beschränkt.
+Deshalb haben wir unsere weiteren Analysen auf die Subjects durchgeführt, die in den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Metadatentags auftauchen, auf dem Oberthema \textit{Computer Science} beschränkt.
 
 
 Zunächst haben wir den apriori-Algorithmus mit den Parametern $minsupp = 1\% $ und $ minconf = 50\%$ auf den \PY{n+nt}{<dc: subject}\PY{n+nt}{>} Tags aller Publikationen, deren Oberthema $Computer Science$ war, angewandt.
@@ -176,9 +176,9 @@ Weitere wichtige Regeln, die nicht zu den Top 10 gehören, aber trotzdem starke $
 
 \subsubsection{Mappings zwischen Klassifikationen}
 \label{sec:mappings}
-Die in der folgenden Tabelle dargestellten Regeln sind alle Assoziationsregeln, wo genau ein ACM-Thema auf der linken Seite und ein arxiv-Thema auf der rechten Seite steht.
+Die in der folgenden Tabelle dargestellten Regeln sind alle Assoziationsregeln, wo genau ein ACM-Thema auf der linken Seite und ein arXiv-Thema auf der rechten Seite steht.
 Wir haben explizit nach Regeln, die diese Form haben, gesucht, damit eine eindeutige Abbildung zwischen Subjects in der jeweiligen Klassifikationen möglich ist.
-Wir haben keine Regeln der Form $arxiv \rightarrow ACM$ gefunden, was auch logisch ist, da die ACM-Klassifikation eine viel feinere Unterteilung als arxiv anbietet.
+Wir haben keine Regeln der Form $arXiv \rightarrow ACM$ gefunden, was auch logisch ist, da die ACM-Klassifikation eine viel feinere Unterteilung als arXiv anbietet.
 Alle gefundenen Regeln haben relativ hohe Konfidenz- und Liftwerte, was dafür spricht, dass die so entstandenen Mappings zuverlässig sind.
 
 \begin{table}[H]
@@ -200,7 +200,8 @@ Alle gefundenen Regeln haben relativ hohe Konfidenz- und Liftwerte, was dafür sp
 \end{tabular}
  \caption{Assoziationsregeln der Unterthemen: Support 0.1 \% und Konfidenz 50 \%}
 \end{table}
-\subsubsection{zeitliche Analyse gefundener Regeln}
+
+\subsubsection{Zeitliche Analyse gefundener Regeln}
 Die zeitliche Betrachtung der Regeln macht es möglich die Entwicklung der Themen und die Korrelation von Themen für wissenschaftliche Publikationen zu beobachten. Mehrere Szenarien sind für die Entwicklung denkbar:
 \begin{enumerate}
 	\item Themengebiete können verschmelzen
@@ -218,13 +219,22 @@ Als erstes wird der zeitliche Verlauf der Regel \textbf{Computer Science - Syste
 	\label{fig:csmath}
 \end{figure}
 In Abbildung \ref{fig:csmath} ist zu erkennen, dass vor dem Jahr 2004 nur Publikationen mit dem Thema Optimization and Control der Mathematik veröffentlicht wurden, aber keine mit dem Thema System and Control in der Informatik.
-Vom Jahr 2004 bis 2006 ist zu sehen, dass nun alle Publikationen im Themengebiet Computer Science - System and Control immer im Zusammenhang mit dem Thema Mathematics - Optimization and Control veröffentlicht wurden. Ab dem Jahr 2006 erhöht sich die Anzahl der veröffentlichen Publikationen mit dem Thema Computer Science - System and Control kontinuierlich auch ohne dem Thema aus der Mathematik, das sich im gleichen Zeitraum deutlich seltener vergebenen wurde, als in den Jahren davor. Anhand des zeitlichen Verlauf lässt sich also feststellen, das sich das Interesse teilweise vom Thema Opimization and Control zum Thema System and Control verschoben hat und das Thema System and Control der Informatik in irgendeiner Form aus dem Thema Optimization and Control der Mathematik entwickelt hat.
+Vom Jahr 2004 bis 2006 ist zu sehen, dass nun alle Publikationen im Themengebiet Computer Science - System and Control immer im Zusammenhang mit dem Thema Mathematics - Optimization and Control veröffentlicht wurden.
+Ab dem Jahr 2006 erhöht sich die Anzahl der veröffentlichten Publikationen mit dem Thema Computer Science - System and Control kontinuierlich auch ohne das Thema aus der Mathematik, das im gleichen Zeitraum deutlich seltener vergebenen wurde, als in den Jahren davor.
+Anhand des zeitlichen Verlaufs lässt sich also feststellen, dass sich das Interesse teilweise vom Thema Opimization and Control zum Thema System and Control verschoben hat und sich das Thema System and Control der Informatik in irgendeiner Form aus dem Thema Optimization and Control der Mathematik entwickelt hat.
 
-Als nächstes Betrachten wir die zeitliche Entwicklung der Regel \textbf{Computer Science - Social and Information Networks} $\implies$ \textbf{Physics - Physics and Society}.
+Als nächstes betrachten wir die zeitliche Entwicklung der Regel \textbf{Computer Science - Social and Information Networks} $\implies$ \textbf{Physics - Physics and Society}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.425]{../visual/trend/csphscaled.png}
 	\caption{Verschmelzung von Themen}
 	\label{csph}
 \end{figure}
-Bis zum Jahr 2009 werden die beiden Themen unabhängig vergeben und es zeigt sich keine Korrelation der beiden Themengebiete. Erst ab dem Jahr 2009 werden beide Themen bei Publikationen zusammen vergeben. Dazu kommt eine schneller Anstieg bei der gemeinsamen Vergabe und der ebenso deutliche Abfall bei der Häufigkeit des Themas Physics - Physics and Society. Dies lässt einen starken Zusammenhang zwischen beiden Themen vermuten. Und da das Thema Computer Science - Social and Information Networks im gleichem Zeitraum einen deutlichen Anstieg zeigt, kann von einer großen Überschneidung der Themengebiete ausgegangen werden. Auch historisch lässt sich die Entwicklung einordnen. Mit dem entstehen von sozialen Netzwerken im Internet hat auch die Erforschung ebendieser in der Informatik an Interesse gewonnen. Die besteht also die Möglichkeit, dass sich die Informatik die Verfahren der Physik in diesem Themengebiet bedient hat und das in der Physik ebenfalls Interesse an diesen Netzwerken entstanden ist, sodass sich beide Themengebiete stärker austauschen udn zusammenarbeiten.
+Bis zum Jahr 2009 werden die beiden Themen unabhängig vergeben und es zeigt sich keine Korrelation der beiden Themengebiete.
+Erst ab dem Jahr 2009 werden beide Themen bei Publikationen zusammen vergeben.
+Dazu kommt ein schneller Anstieg bei der gemeinsamen Vergabe und der ebenso deutliche Abfall bei der Häufigkeit des Themas Physics - Physics and Society.
+Dies lässt einen starken Zusammenhang zwischen beiden Themen vermuten.
+Und da das Thema Computer Science - Social and Information Networks im gleichen Zeitraum einen deutlichen Anstieg zeigt, kann von einer großen Überschneidung der Themengebiete ausgegangen werden.
+Auch historisch lässt sich die Entwicklung einordnen.
+Mit dem Entstehen von sozialen Netzwerken im Internet hat auch die Erforschung ebendieser in der Informatik an Interesse gewonnen.
+Es besteht also die Möglichkeit, dass sich die Informatik die Verfahren der Physik in diesem Themengebiet bedient hat und dass in der Physik ebenfalls Interesse an diesen Netzwerken entstanden ist, sodass sich beide Themengebiete stärker austauschen und zusammenarbeiten.
